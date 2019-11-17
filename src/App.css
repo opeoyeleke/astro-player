@@ -85,8 +85,13 @@ body {
   .bm-burger-button::after {
     position: fixed;
     content: "Astro Player";
+<<<<<<< HEAD
     left: 90px;
     transform: translateY(-3px);
+=======
+    left: 50px;
+    transform: translateY(-2px);
+>>>>>>> 7a9bb3283a7d5cc0a4a59594bcc6631415def7e8
     font-style: italic;
   }
   /* Color/shape of burger icon bars */
@@ -108,7 +113,11 @@ body {
   /* General sidebar styles */
   .bm-menu {
     background: #1a1938;
+<<<<<<< HEAD
     padding: 2.5em 2em 0;
+=======
+    padding: 1.8em 1.3em 0;
+>>>>>>> 7a9bb3283a7d5cc0a4a59594bcc6631415def7e8
   }
 
   /* Morph shape necessary with bubble or elastic */
