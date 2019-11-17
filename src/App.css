@@ -3,17 +3,17 @@ body {
   margin: 0;
   height: 100%;
 }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 719px) {
   .app-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 1fr;
+    display: grid;
   }
 
   .navbar-container {
     grid-row: 1/2;
     grid-column: 1/2;
-    border: 3px solid red;
+    height: 48px;
     /* border-right: 1px solid #e1e1f2; */
   }
 
@@ -75,15 +75,15 @@ body {
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 36px;
+    width: 18px;
+    height: 12px;
+    left: 20px;
+    top: 18px;
   }
 
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #373a47;
+    background: white;
   }
 
   /* Position and sizing of clickable cross button */
@@ -99,9 +99,8 @@ body {
 
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    background: #1a1938;
+    padding: 1.5em 1em 0;
   }
 
   /* Morph shape necessary with bubble or elastic */
@@ -115,9 +114,6 @@ body {
   }
 
   /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -149,19 +145,6 @@ body {
     grid-row: 2/3;
     grid-column: 1/3;
     border: 3px solid red;
-  }
-
-  .nav-icon {
-    margin-right: 10px;
-    transform: translateY(-1px);
-  }
-
-  .nav-title {
-    font-weight: 600;
-    font-size: 90%;
-  }
-  .nav-item {
-    padding: 13px 0px;
   }
 
   .mobile-menu {
@@ -205,4 +188,18 @@ a:active {
 
 .active {
   color: #fc2d58 !important;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  transform: translateY(-1px);
+}
+
+.nav-title {
+  font-weight: 600;
+  font-size: 90%;
+}
+
+.nav-item {
+  padding: 13px 0px;
 }
