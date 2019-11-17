@@ -74,6 +74,7 @@ body {
 
   /* Position and sizing of burger button */
   .bm-burger-button {
+    content: "";
     position: fixed;
     width: 18px;
     height: 12px;
@@ -81,6 +82,13 @@ body {
     top: 18px;
   }
 
+  .bm-burger-button::after {
+    position: fixed;
+    content: "Astro Player";
+    left: 50px;
+    transform: translateY(-2px);
+    font-style: italic;
+  }
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
     background: white;
@@ -100,7 +108,7 @@ body {
   /* General sidebar styles */
   .bm-menu {
     background: #1a1938;
-    padding: 1.5em 1em 0;
+    padding: 1.8em 1.3em 0;
   }
 
   /* Morph shape necessary with bubble or elastic */
@@ -112,8 +120,6 @@ body {
   .bm-item-list {
     color: #b8b7ad;
   }
-
-  /* Styling of overlay */
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

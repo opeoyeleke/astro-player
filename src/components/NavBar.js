@@ -72,7 +72,7 @@ export default class NavBar extends Component {
         </div>
 
         <div className="mobile-menu">
-          <Menu>
+          <Menu width={180}>
             <div className="top-nav">
               <div className="nav-item">
                 <span className="nav-title">LIBRARY</span>
