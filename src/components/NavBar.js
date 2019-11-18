@@ -73,34 +73,32 @@ export default class NavBar extends Component {
 
         <div className="mobile-menu">
           <Menu width={249}>
-            <div className="top-nav">
-              <div className="nav-item">
-                <span className="nav-title">LIBRARY</span>
-              </div>
-              <div className="nav-item">
-                <NavLink to="/playlists" activeClassName="active">
-                  <Icon className="nav-icon" icon={ic_queue_music} />
-                  Playlists
-                </NavLink>
-              </div>
-              <div className="nav-item">
-                <NavLink to="/artists" activeClassName="active">
-                  <Icon className="nav-icon" icon={ic_person} />
-                  Artists
-                </NavLink>
-              </div>
-              <div className="nav-item">
-                <NavLink to="/albums" activeClassName="active">
-                  <Icon className="nav-icon" icon={ic_album} />
-                  Albums
-                </NavLink>
-              </div>
-              <div className="nav-item">
-                <NavLink to="/songs" activeClassName="active">
-                  <Icon className="nav-icon" icon={ic_music_note} />
-                  Songs
-                </NavLink>
-              </div>
+            <div className="nav-item">
+              <span className="nav-title">LIBRARY</span>
+            </div>
+            <div className="nav-item">
+              <NavLink to="/playlists" activeClassName="active">
+                <Icon className="nav-icon" icon={ic_queue_music} />
+                Playlists
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink to="/artists" activeClassName="active">
+                <Icon className="nav-icon" icon={ic_person} />
+                Artists
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink to="/albums" activeClassName="active">
+                <Icon className="nav-icon" icon={ic_album} />
+                Albums
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink to="/songs" activeClassName="active">
+                <Icon className="nav-icon" icon={ic_music_note} />
+                Songs
+              </NavLink>
             </div>
           </Menu>
         </div>

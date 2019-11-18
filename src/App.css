@@ -45,6 +45,7 @@ body {
 
   .nav-item {
     display: flex;
+    padding: 13px 4vw;
   }
 
   .mobile-nav-item {
