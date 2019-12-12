@@ -17,6 +17,7 @@ body {
 @media only screen and (max-width: 649px) {
   .app-container {
     display: grid;
+    position: absolute;
   }
 
   .navbar-container {
@@ -81,12 +82,12 @@ body {
     top: 18px;
   }
 
-  .bm-burger-button::after {
+  .page-title {
     position: fixed;
     content: "Astro Player";
     left: 70px;
+    top: 18px;
     transform: translateY(-3px);
-    font-style: italic;
   }
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
