@@ -105,8 +105,35 @@ export default class NavBar extends Component {
                       Songs
                     </NavLink>
                   </div>
+                  <div className="nav-item">
+                    <span className="nav-title">DISCOVER</span>
+                  </div>
+                  <div className="nav-item">
+                    <NavLink to="/store" activeClassName="active">
+                      <Icon className="nav-icon" icon={ic_queue_music} />
+                      Store
+                    </NavLink>
+                  </div>
+                  <div className="nav-item">
+                    <NavLink to="/radio" activeClassName="active">
+                      <Icon className="nav-icon" icon={ic_person} />
+                      Radio
+                    </NavLink>
+                  </div>
+                  <div className="nav-item">
+                    <NavLink to="/foryou" activeClassName="active">
+                      <Icon className="nav-icon" icon={ic_album} />
+                      For You
+                    </NavLink>
+                  </div>
+                  <div className="nav-item">
+                    <NavLink to="/browse" activeClassName="active">
+                      <Icon className="nav-icon" icon={ic_music_note} />
+                      Browse
+                    </NavLink>
+                  </div>
                 </Menu>
-                <div className="page-title">Astro Player</div>
+                <div className="page-title">{headerName}</div>
               </div>
             </div>
           );
