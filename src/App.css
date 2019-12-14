@@ -17,6 +17,8 @@ body {
 @media only screen and (max-width: 649px) {
   .app-container {
     display: grid;
+    position: absolute;
+    width: 100vw;
   }
 
   .navbar-container {
@@ -73,7 +75,6 @@ body {
 
   /* Position and sizing of burger button */
   .bm-burger-button {
-    content: "";
     position: fixed;
     width: 18px;
     height: 12px;
@@ -83,7 +84,6 @@ body {
 
   .page-title {
     position: fixed;
-    content: "Astro Player";
     left: 70px;
     top: 18px;
     transform: translateY(-3px);
