@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { slide as Menu } from "react-burger-menu";
-import { ic_person } from "react-icons-kit/md/ic_person";
-import { ic_queue_music } from "react-icons-kit/md/ic_queue_music";
-import { ic_album } from "react-icons-kit/md/ic_album";
-import { ic_music_note } from "react-icons-kit/md/ic_music_note";
+import {
+  ic_person,
+  ic_music_note,
+  ic_album,
+  ic_queue_music,
+  ic_library_music,
+  ic_radio,
+  ic_favorite,
+  ic_stars
+} from "react-icons-kit/md";
 import { Consumer } from "../Context";
 
 export default class NavBar extends Component {
@@ -45,37 +51,35 @@ export default class NavBar extends Component {
                   </NavLink>
                 </div>
               </div>
-
               <div className="bottom-nav">
                 <div className="nav-item">
                   <span className="nav-title">DISCOVER</span>
                 </div>
                 <div className="nav-item">
                   <NavLink to="/store" activeClassName="active">
-                    <Icon className="nav-icon" icon={ic_queue_music} />
+                    <Icon className="nav-icon" icon={ic_stars} />
                     Store
                   </NavLink>
                 </div>
                 <div className="nav-item">
                   <NavLink to="/radio" activeClassName="active">
-                    <Icon className="nav-icon" icon={ic_person} />
+                    <Icon className="nav-icon" icon={ic_radio} />
                     Radio
                   </NavLink>
                 </div>
                 <div className="nav-item">
                   <NavLink to="/foryou" activeClassName="active">
-                    <Icon className="nav-icon" icon={ic_album} />
+                    <Icon className="nav-icon" icon={ic_favorite} />
                     For You
                   </NavLink>
                 </div>
                 <div className="nav-item">
                   <NavLink to="/browse" activeClassName="active">
-                    <Icon className="nav-icon" icon={ic_music_note} />
+                    <Icon className="nav-icon" icon={ic_library_music} />
                     Browse
                   </NavLink>
                 </div>
               </div>
-
               <div className="mobile-menu">
                 <Menu width={249}>
                   <div className="nav-item">
@@ -110,25 +114,25 @@ export default class NavBar extends Component {
                   </div>
                   <div className="nav-item">
                     <NavLink to="/store" activeClassName="active">
-                      <Icon className="nav-icon" icon={ic_queue_music} />
+                      <Icon className="nav-icon" icon={ic_stars} />
                       Store
                     </NavLink>
                   </div>
                   <div className="nav-item">
                     <NavLink to="/radio" activeClassName="active">
-                      <Icon className="nav-icon" icon={ic_person} />
+                      <Icon className="nav-icon" icon={ic_radio} />
                       Radio
                     </NavLink>
                   </div>
                   <div className="nav-item">
                     <NavLink to="/foryou" activeClassName="active">
-                      <Icon className="nav-icon" icon={ic_album} />
+                      <Icon className="nav-icon" icon={ic_favorite} />
                       For You
                     </NavLink>
                   </div>
                   <div className="nav-item">
                     <NavLink to="/browse" activeClassName="active">
-                      <Icon className="nav-icon" icon={ic_music_note} />
+                      <Icon className="nav-icon" icon={ic_library_music} />
                       Browse
                     </NavLink>
                   </div>
