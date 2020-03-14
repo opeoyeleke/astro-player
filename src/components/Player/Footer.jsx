@@ -1,5 +1,5 @@
 import React from "react";
-import ArtistImage from "./../assets/images/artist.jpg";
+import ArtistImage from "./../../assets/images/artist.jpg";
 import { Icon } from "react-icons-kit";
 import {
   ic_skip_previous,
@@ -20,7 +20,7 @@ export default function Footer() {
     <div className="footer-container">
       <div className="footer-left">
         <div className="artist-image-small">
-          <img src={ArtistImage} alt="artist image" />
+          <img src={ArtistImage} alt="artistimage" />
         </div>
         <div className="song-info">
           <div className="artist-name">Ne-yo</div>
