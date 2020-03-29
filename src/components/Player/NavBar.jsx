@@ -7,7 +7,6 @@ import {
   ic_music_note,
   ic_album,
   ic_queue_music,
-  ic_library_music,
   ic_radio,
   ic_favorite,
   ic_stars
@@ -122,6 +121,11 @@ export default class NavBar extends Component {
               <NavLink to="/player/foryou" activeClassName="active">
                 <Icon className="nav-icon" icon={ic_favorite} />
                 For You
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink to="/" activeClassName="" className="home-button">
+                Home
               </NavLink>
             </div>
           </Menu>

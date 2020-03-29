@@ -178,12 +178,6 @@ body {
     margin-top: 40px;
   }
 
-  .home-button {
-    padding: 10px 25px;
-    background: rgba(169, 169, 169, 0.281);
-    border-radius: 15px;
-  }
-
   .top-nav {
     padding-top: 2vh;
   }
@@ -307,4 +301,10 @@ a:active {
 .nav-icon {
   margin-right: 10px;
   transform: translateY(-1px);
+}
+
+.home-button {
+  padding: 10px 25px;
+  background: rgba(169, 169, 169, 0.281);
+  border-radius: 15px;
 }

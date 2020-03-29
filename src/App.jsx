@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
+
 import "./App.css";
 import Home from "./components/Home";
 import Player from "./components/Player/Player";
