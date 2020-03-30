@@ -40,14 +40,18 @@ function Footer(props) {
               className="control-button"
               size={30}
               icon={ic_pause}
-              onClick={playPause(false)}
+              onClick={() => {
+                playPause(false);
+              }}
             />
           ) : (
             <Icon
               className="control-button"
               size={30}
               icon={ic_play_arrow}
-              onClick={playPause(true)}
+              onClick={() => {
+                playPause(true);
+              }}
             />
           )}
           <Icon className="control-button" size={30} icon={ic_skip_next} />
