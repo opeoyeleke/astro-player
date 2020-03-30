@@ -18,8 +18,8 @@ import { connect } from "react-redux";
 import ArtistImage from "./../../assets/images/artist.jpg";
 import { playPause } from "./../../redux/track/track.actions";
 
-function Footer() {
-  const { isPlaying, playPause } = this.props;
+function Footer(props) {
+  const { isPlaying, playPause } = props;
 
   return (
     <div className="footer-container">
@@ -68,7 +68,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  playPause: Boolean => dispatch(playPause(Boolean))
+  playPause: playingStatus => dispatch(playPause(playingStatus))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);
