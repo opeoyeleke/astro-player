@@ -19,7 +19,7 @@ import ArtistImage from "./../../assets/images/artist.jpg";
 import { playPause } from "./../../redux/track/track.actions";
 
 function Footer(props) {
-  const { isPlaying, playPause } = props;
+  const { isPlaying, playPause, trackName, trackImage, trackArtist } = props;
 
   return (
     <div className="footer-container">
@@ -28,8 +28,8 @@ function Footer(props) {
           <img src={ArtistImage} alt="artistimage" />
         </div>
         <div className="song-info">
-          <div className="artist-name">Ne-yo</div>
-          <div className="song-name">Christmas</div>
+          <div className="artist-name">{trackArtist}</div>
+          <div className="song-name">{trackName}</div>
         </div>
       </div>
       <div className="footer-center">
@@ -56,10 +56,12 @@ function Footer(props) {
           )}
           <Icon className="control-button" size={30} icon={ic_skip_next} />
         </div>
-        <div className="progress-bar"></div>
+        <div className="progress-bar">
+          <input type="range" />
+        </div>
       </div>
       <div className="footer-right">
-        <Icon className="control-button" size={30} icon={ic_volume_up} />
+        <Icon className="control-button" size={30} icon={ic_volume_mute} />
         <Icon className="control-button" size={30} icon={ic_shuffle} />
         <Icon className="control-button" size={30} icon={ic_repeat} />
       </div>
@@ -68,11 +70,14 @@ function Footer(props) {
 }
 
 const mapStateToProps = state => ({
-  isPlaying: state.track.isPlaying
+  isPlaying: state.track.isPlaying,
+  trackImage: state.track.trackImage,
+  trackName: state.track.trackName,
+  trackArtist: state.track.trackArtist
 });
 
 const mapDispatchToProps = dispatch => ({
-  playPause: playingStatus => dispatch(playPause(playingStatus))
+  playPause: Boolean => dispatch(playPause(Boolean))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

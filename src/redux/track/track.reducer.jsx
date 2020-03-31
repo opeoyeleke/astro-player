@@ -3,7 +3,10 @@ const INITIAL_STATE = {
   shuffle: false,
   repeat: "repeatList",
   activeTrack: null,
-  playingQueue: []
+  playingQueue: [],
+  trackImage: null,
+  trackName: "Christmas",
+  trackArtist: "Ne-yo"
 };
 
 const trackReducer = (state = INITIAL_STATE, action) => {
