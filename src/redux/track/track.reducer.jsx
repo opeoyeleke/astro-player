@@ -6,7 +6,8 @@ const INITIAL_STATE = {
   playingQueue: [],
   trackImage: null,
   trackName: "Christmas",
-  trackArtist: "Ne-yo"
+  trackArtist: "Ne-yo",
+  muteSound: false
 };
 
 const trackReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +16,11 @@ const trackReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isPlaying: action.payload
+      };
+    case "MUTE_UNMUTE":
+      return {
+        ...state,
+        muteSound: action.payload
       };
     default:
       return state;

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Playlists() {
   return (
-    <div className="main-container">
+    <div className="main-container-content">
       Foremost, my acknowledgement goes to the Almighty God who has given me the
       privilege to be alive, and I would like to express my sincere gratitude to
       my supervisor, Dr. A.O. Ojoawo for his patience and insightful correction

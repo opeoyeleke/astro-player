@@ -36,7 +36,9 @@ body {
   .footer-container {
     grid-row: 6/7;
     grid-column: 1/2;
-    height: auto;
+    height: 6vh;
+    background-color: #1a1938;
+    color: white;
   }
 
   .top-nav,
@@ -44,9 +46,16 @@ body {
     display: none;
   }
 
-  .footer-left,
   .footer-center,
   .footer-right {
+    display: none;
+  }
+
+  .footer-left {
+    display: inline;
+  }
+
+  .artist-image-small {
     display: none;
   }
 
@@ -87,11 +96,15 @@ body {
     top: 18px;
   }
 
-  .page-title {
+  .page-title-small {
     position: fixed;
     left: 70px;
     top: 18px;
     transform: translateY(-3px);
+  }
+
+  .page-title-large {
+    display: none;
   }
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
@@ -142,6 +155,7 @@ body {
     left: 0;
     z-index: 3;
     overflow: hidden;
+    border-right: 1px solid rgb(45, 44, 76);
   }
 
   .main-container {
@@ -150,7 +164,7 @@ body {
     grid-column: 2/3;
     height: 91vh;
     z-index: 1;
-    background: seagreen;
+    background: #1a1938;
     overflow: scroll;
   }
 
@@ -325,6 +339,23 @@ body {
   }
   input[type="range"]:focus::-ms-fill-upper {
     background: rgba(111, 119, 113, 0.59);
+  }
+
+  .page-title-large {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    background: #1a1938;
+    border-bottom: 1px solid rgb(45, 44, 76);
+    z-index: 7;
+  }
+
+  .page-title-content {
+    margin: 5px 0 0 3vw;
+  }
+
+  .main-container-content {
+    padding: 40px 10px 10px 10px;
   }
 }
 

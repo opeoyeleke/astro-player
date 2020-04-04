@@ -5,9 +5,7 @@ import {
   ic_play_arrow,
   ic_pause,
   ic_skip_next,
-  ic_volume_off,
   ic_volume_mute,
-  ic_volume_down,
   ic_volume_up,
   ic_repeat,
   ic_repeat_one,
@@ -16,10 +14,18 @@ import {
 import { connect } from "react-redux";
 
 import ArtistImage from "./../../assets/images/artist.jpg";
-import { playPause } from "./../../redux/track/track.actions";
+import { playPause, muteUnmute } from "./../../redux/track/track.actions";
 
 function Footer(props) {
-  const { isPlaying, playPause, trackName, trackImage, trackArtist } = props;
+  const {
+    isPlaying,
+    playPause,
+    trackName,
+    trackImage,
+    trackArtist,
+    muteSound,
+    muteUnmute
+  } = props;
 
   return (
     <div className="footer-container">
@@ -61,9 +67,27 @@ function Footer(props) {
         </div>
       </div>
       <div className="footer-right">
-        <Icon className="control-button" size={30} icon={ic_volume_mute} />
+        {muteSound ? (
+          <Icon
+            className="control-button"
+            size={30}
+            icon={ic_volume_mute}
+            onClick={() => {
+              muteUnmute(false);
+            }}
+          />
+        ) : (
+          <Icon
+            className="control-button"
+            size={30}
+            icon={ic_volume_up}
+            onClick={() => {
+              muteUnmute(true);
+            }}
+          />
+        )}
         <Icon className="control-button" size={30} icon={ic_shuffle} />
-        <Icon className="control-button" size={30} icon={ic_repeat} />
+        <Icon className="control-button" size={30} icon={ic_repeat_one} />
       </div>
     </div>
   );
@@ -73,11 +97,13 @@ const mapStateToProps = state => ({
   isPlaying: state.track.isPlaying,
   trackImage: state.track.trackImage,
   trackName: state.track.trackName,
-  trackArtist: state.track.trackArtist
+  trackArtist: state.track.trackArtist,
+  muteSound: state.track.muteSound
 });
 
 const mapDispatchToProps = dispatch => ({
-  playPause: Boolean => dispatch(playPause(Boolean))
+  playPause: Boolean => dispatch(playPause(Boolean)),
+  muteUnmute: Boolean => dispatch(muteUnmute(Boolean))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

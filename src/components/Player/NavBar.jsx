@@ -129,7 +129,7 @@ export default class NavBar extends Component {
               </NavLink>
             </div>
           </Menu>
-          <div className="page-title">Page title</div>
+          <div className="page-title-small">Astro Player</div>
         </div>
       </div>
     );
