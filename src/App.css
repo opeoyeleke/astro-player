@@ -10,7 +10,7 @@ html::-webkit-scrollbar {
 body {
   font-family: Roboto, sans-serif;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -158,12 +158,9 @@ body {
     max-width: 16vw;
     top: 0;
     left: 0;
-    z-index: 3;
     overflow: hidden;
     background: black;
     color: white;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
   }
 
   .main-container {
@@ -176,7 +173,6 @@ body {
     position: relative;
     background: white;
     overflow: scroll;
-    border-bottom: 1px solid black;
   }
 
   .footer-container {
@@ -188,6 +184,7 @@ body {
     background: black;
     display: inline-flex;
     justify-content: space-between;
+    border-top: 1px solid gray;
   }
 
   .mobile-menu {
@@ -358,7 +355,7 @@ body {
     height: 30px;
     background: black;
     color: white;
-    border-bottom: 1px solid black;
+    border-left: 1px solid gray;
     z-index: 7;
   }
 
@@ -372,13 +369,13 @@ body {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 925px) {
   .main-container {
     width: 85vw;
   }
 
   .navbar-container {
-    width: 15vw;
+    max-width: 15vw;
   }
   .nav-item {
     padding: 16px 3vw;
@@ -391,13 +388,6 @@ body {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .main-container {
-    width: 86vw;
-  }
-
-  .navbar-container {
-    width: 14vw;
-  }
   .nav-item {
     padding: 16px 4vw;
   }
@@ -428,9 +418,9 @@ a:visited {
   color: inherit;
 }
 
-a:active {
+/* a:active {
   color: #fc2d58;
-}
+} */
 
 .active {
   color: #fc2d58 !important;
