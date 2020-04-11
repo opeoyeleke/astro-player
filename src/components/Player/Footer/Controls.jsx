@@ -9,6 +9,7 @@ import {
 import { connect } from "react-redux";
 
 import { playPause } from "../../../redux/track/track.actions";
+import Progress from "./Progress";
 
 function Controls(props) {
   const { isPlaying, playPause } = props;
@@ -39,7 +40,7 @@ function Controls(props) {
         <Icon className="control-button" size={30} icon={ic_skip_next} />
       </div>
       <div className="progress-bar">
-        <input type="range" />
+        <Progress />
       </div>
     </div>
   );

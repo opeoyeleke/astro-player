@@ -11,7 +11,7 @@ import { connect } from "react-redux";
 import { muteUnmute } from "../../../redux/track/track.actions";
 
 function Volume_Repeat(props) {
-  const { muteSound, muteUnmute } = props;
+  const { muteSound, muteUnmute, repeatTracks, changeRepeat } = props;
 
   return (
     <div className="footer-right">
@@ -34,7 +34,25 @@ function Volume_Repeat(props) {
           }}
         />
       )}
-      <Icon className="control-button" size={30} icon={ic_repeat_one} />
+      {repeatTracks ? (
+        <Icon
+          className="control-button"
+          size={30}
+          icon={ic_repeat}
+          onClick={() => {
+            changeRepeat();
+          }}
+        />
+      ) : (
+        <Icon
+          className="control-button"
+          size={30}
+          icon={ic_repeat_one}
+          onClick={() => {
+            changeRepeat();
+          }}
+        />
+      )}
     </div>
   );
 }
