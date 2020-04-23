@@ -1,5 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function Albums() {
-  return <div className="main-container-content">Albums</div>;
+export default class Albums extends Component {
+  constructor(props) {
+    super();
+  }
+
+  render() {
+    return <div className="main-container-content">Albums</div>;
+  }
 }

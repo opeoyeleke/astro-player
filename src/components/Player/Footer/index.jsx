@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TrackInfo from "./TrackInfo";
 import Controls from "./Controls";
-import Volume_Repeat from "./Volume_Repeat";
+import VolumeRepeat from "./VolumeRepeat";
 
 class Footer extends Component {
   constructor() {
@@ -21,7 +21,7 @@ class Footer extends Component {
       <div className="footer-container">
         <TrackInfo />
         <Controls />
-        <Volume_Repeat
+        <VolumeRepeat
           repeatTracks={this.state.repeatTracks}
           changeRepeat={this.changeRepeat}
         />

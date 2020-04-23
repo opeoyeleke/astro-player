@@ -1,9 +1,9 @@
-export const playPause = Boolean => ({
+export const changeIsPlaying = (Boolean) => ({
   type: "PLAY_PAUSE",
-  payload: Boolean
+  payload: Boolean,
 });
 
-export const muteUnmute = Boolean => ({
+export const muteUnmute = (Boolean) => ({
   type: "MUTE_UNMUTE",
-  payload: Boolean
+  payload: Boolean,
 });

@@ -8,11 +8,17 @@ import {
 } from "react-icons-kit/md";
 import { connect } from "react-redux";
 
-import { playPause } from "../../../redux/track/track.actions";
+import { changeIsPlaying } from "../../../redux/track/track.actions";
 import Progress from "./Progress";
+import testAudio from "./../../../assets/test_audio.mp3";
 
 function Controls(props) {
-  const { isPlaying, playPause } = props;
+  const { isPlaying, changeIsPlaying } = props;
+
+  function playAudio() {
+    const audioFile = document.getElementsByClassName("audio-element")[0];
+    audioFile.play();
+  }
 
   return (
     <div className="footer-center">
@@ -24,7 +30,7 @@ function Controls(props) {
             size={30}
             icon={ic_pause}
             onClick={() => {
-              playPause(false);
+              playAudio();
             }}
           />
         ) : (
@@ -33,7 +39,7 @@ function Controls(props) {
             size={30}
             icon={ic_play_arrow}
             onClick={() => {
-              playPause(true);
+              changeIsPlaying(true);
             }}
           />
         )}
@@ -42,6 +48,9 @@ function Controls(props) {
       <div className="progress-bar">
         <Progress />
       </div>
+      <audio className="audio-element">
+        <source src={testAudio}></source>
+      </audio>
     </div>
   );
 }
@@ -51,7 +60,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  playPause: (Boolean) => dispatch(playPause(Boolean)),
+  changeIsPlaying: (Boolean) => dispatch(changeIsPlaying(Boolean)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Controls);

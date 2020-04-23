@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 
 import { muteUnmute } from "../../../redux/track/track.actions";
 
-function Volume_Repeat(props) {
+function VolumeRepeat(props) {
   const { muteSound, muteUnmute, repeatTracks, changeRepeat } = props;
 
   return (
@@ -65,4 +65,4 @@ const mapDispatchToProps = (dispatch) => ({
   muteUnmute: (Boolean) => dispatch(muteUnmute(Boolean)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Volume_Repeat);
+export default connect(mapStateToProps, mapDispatchToProps)(VolumeRepeat);

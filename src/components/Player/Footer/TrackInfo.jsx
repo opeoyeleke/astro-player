@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import ArtistImage from "./../../../assets/images/artist.jpg";
 
 function TrackInfo(props) {
-  const { trackName, trackImage, trackArtist } = props;
+  const { trackName, trackArtist } = props;
 
   return (
     <div className="footer-left">
