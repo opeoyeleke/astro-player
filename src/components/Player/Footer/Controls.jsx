@@ -30,7 +30,7 @@ function Controls(props) {
             size={30}
             icon={ic_pause}
             onClick={() => {
-              playAudio();
+              changeIsPlaying();
             }}
           />
         ) : (
@@ -39,7 +39,7 @@ function Controls(props) {
             size={30}
             icon={ic_play_arrow}
             onClick={() => {
-              changeIsPlaying(true);
+              changeIsPlaying();
             }}
           />
         )}
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeIsPlaying: (Boolean) => dispatch(changeIsPlaying(Boolean)),
+  changeIsPlaying: () => dispatch(changeIsPlaying()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Controls);

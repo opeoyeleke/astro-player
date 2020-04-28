@@ -10,7 +10,7 @@ export default class PageTitle extends Component {
           <span className="header-nav-button">
             <Icon className="nav-icon" icon={ic_arrow_back} />
           </span>
-          Astro Player
+          Albums
         </div>
       </div>
     );

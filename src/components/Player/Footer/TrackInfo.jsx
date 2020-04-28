@@ -11,9 +11,9 @@ function TrackInfo(props) {
       <div className="artist-image-small">
         <img src={ArtistImage} alt="artistimage" />
       </div>
-      <div className="song-info">
+      <div className="track-info">
         <div className="artist-name">{trackArtist}</div>
-        <div className="song-name">{trackName}</div>
+        <div className="track-name">{trackName}</div>
       </div>
     </div>
   );

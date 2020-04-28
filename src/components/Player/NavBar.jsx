@@ -9,7 +9,7 @@ import {
   ic_queue_music,
   ic_radio,
   ic_favorite,
-  ic_stars
+  ic_stars,
 } from "react-icons-kit/md";
 
 export default class NavBar extends Component {
@@ -39,9 +39,9 @@ export default class NavBar extends Component {
             </NavLink>
           </div>
           <div className="nav-item">
-            <NavLink to="/player/songs" activeClassName="active">
+            <NavLink to="/player/tracks" activeClassName="active">
               <Icon className="nav-icon" icon={ic_music_note} />
-              Songs
+              Tracks
             </NavLink>
           </div>
         </div>
@@ -97,9 +97,9 @@ export default class NavBar extends Component {
               </NavLink>
             </div>
             <div className="nav-item">
-              <NavLink to="/player/songs" activeClassName="active">
+              <NavLink to="/player/tracks" activeClassName="active">
                 <Icon className="nav-icon" icon={ic_music_note} />
-                Songs
+                Tracks
               </NavLink>
             </div>
             <div className="nav-item">

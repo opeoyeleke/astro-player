@@ -1,9 +1,12 @@
-export const changeIsPlaying = (Boolean) => ({
+export const changeIsPlaying = () => ({
   type: "PLAY_PAUSE",
-  payload: Boolean,
 });
 
-export const muteUnmute = (Boolean) => ({
+export const muteUnmute = () => ({
   type: "MUTE_UNMUTE",
-  payload: Boolean,
+});
+
+export const setActiveTrack = (track) => ({
+  type: "SET_ACTIVETRACK",
+  payload: track,
 });

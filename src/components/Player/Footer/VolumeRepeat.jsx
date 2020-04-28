@@ -21,7 +21,7 @@ function VolumeRepeat(props) {
           size={30}
           icon={ic_volume_mute}
           onClick={() => {
-            muteUnmute(false);
+            muteUnmute();
           }}
         />
       ) : (
@@ -30,7 +30,7 @@ function VolumeRepeat(props) {
           size={30}
           icon={ic_volume_up}
           onClick={() => {
-            muteUnmute(true);
+            muteUnmute();
           }}
         />
       )}
@@ -62,7 +62,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  muteUnmute: (Boolean) => dispatch(muteUnmute(Boolean)),
+  muteUnmute: () => dispatch(muteUnmute()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VolumeRepeat);

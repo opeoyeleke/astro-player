@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Albums from "./Album/Albums";
-import SongsList from "./Songs/SongsList";
+import TrackList from "./Tracks/TrackList";
 import Playlists from "./Playlist/Playlists";
 import Artists from "./Artist/Artists";
 import Store from "./Store/Store";
@@ -16,7 +16,7 @@ export default class MainSection extends Component {
         <Header />
         <Switch>
           <Route path="/player/albums" component={Albums} />
-          <Route exact path="/player/songs" component={SongsList} />
+          <Route exact path="/player/tracks" component={TrackList} />
           <Route exact path="/player/playlists" component={Playlists} />
           <Route exact path="/player/artists" component={Artists} />
           <Route exact path="/player/store" component={Store} />
