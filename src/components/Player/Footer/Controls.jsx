@@ -15,10 +15,10 @@ import testAudio from "./../../../assets/test_audio.mp3";
 function Controls(props) {
   const { isPlaying, changeIsPlaying } = props;
 
-  function playAudio() {
-    const audioFile = document.getElementsByClassName("audio-element")[0];
-    audioFile.play();
-  }
+  // function playAudio() {
+  //   const audioFile = document.getElementsByClassName("audio-element")[0];
+  //   audioFile.play();
+  // }
 
   return (
     <div className="footer-center">
