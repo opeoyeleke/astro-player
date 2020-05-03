@@ -4,6 +4,7 @@ import {
   getDataFailure,
   getAlbumsSuccess,
   getAlbumInfoSuccess,
+  getPageTitle,
 } from "./data/data.actions";
 
 export function getAlbums() {
@@ -28,6 +29,7 @@ export function getAlbumInfo(albumId) {
       )
       .then((res) => {
         dispatch(getAlbumInfoSuccess(res.data));
+        dispatch(getPageTitle(res.data.title));
         return res.data;
       })
       .catch((error) => dispatch(getDataFailure(error)));

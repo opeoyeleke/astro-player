@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { slide as Menu } from "react-burger-menu";
@@ -12,7 +13,7 @@ import {
   ic_stars,
 } from "react-icons-kit/md";
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   render() {
     return (
       <div className="navbar-container">
@@ -129,9 +130,15 @@ export default class NavBar extends Component {
               </NavLink>
             </div>
           </Menu>
-          <div className="page-title-small">Astro Player</div>
+          <div className="page-title-small">{this.props.title}</div>
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  title: state.data.title,
+});
+
+export default connect(mapStateToProps)(NavBar);

@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import { getAlbumInfo } from "./../../../redux/dataFetch";
 import { connect } from "react-redux";
 import Loader from "../Loader";
+import { getPageTitle } from "../../../redux/data/data.actions";
 
 class AlbumInfo extends Component {
   componentDidMount() {
     this.props.dispatch(getAlbumInfo(this.props.match.params.albumId));
   }
 
-  render() {
-    console.log(this.props.album);
+  // componentDidUpdate() {
+  //   this.props.dispatch(getPageTitle(this.props.album.title));
+  // }
 
+  render() {
     return (
       <div className="album-info-container">
         ssjsjsjsj snssjsjsjsjsj sjsjsjsjsjs sjsjsjsjsjsjsj snssjsjsjsjsj

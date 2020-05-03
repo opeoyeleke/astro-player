@@ -3,10 +3,12 @@ import Loader from "./../Loader";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getAlbums } from "./../../../redux/dataFetch";
+import { getPageTitle } from "./../../../redux/data/data.actions";
 
 class Albums extends Component {
   componentDidMount() {
     this.props.dispatch(getAlbums());
+    this.props.dispatch(getPageTitle("Albums"));
   }
 
   render() {

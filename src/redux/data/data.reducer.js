@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
+  title: "Albums",
   loading: false,
   albums: [],
   album: [],
@@ -7,6 +8,11 @@ const INITIAL_STATE = {
 
 const dataReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case "GET_PAGE_TITLE":
+      return {
+        ...state,
+        title: action.payload.title,
+      };
     case "GET_DATA_BEGIN":
       return {
         ...state,
