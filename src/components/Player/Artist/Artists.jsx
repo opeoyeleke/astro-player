@@ -1,5 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
+import { getPageTitle } from "./../../../redux/data/data.actions";
+import { connect } from "react-redux";
 
-export default function Artists() {
-  return <div className="main-container-content">Artists</div>;
+class Artists extends Component {
+  componentDidMount() {
+    this.props.dispatch(getPageTitle("Artists"));
+  }
+  render() {
+    return <div className="main-container-content">Artists</div>;
+  }
 }
+
+export default connect()(Artists);

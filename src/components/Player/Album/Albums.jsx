@@ -7,8 +7,8 @@ import { getPageTitle } from "./../../../redux/data/data.actions";
 
 class Albums extends Component {
   componentDidMount() {
-    this.props.dispatch(getAlbums());
     this.props.dispatch(getPageTitle("Albums"));
+    this.props.dispatch(getAlbums());
   }
 
   render() {
@@ -17,7 +17,6 @@ class Albums extends Component {
     if (error) {
       return <div>Error! {error.message}</div>;
     }
-
     if (loading) {
       return <Loader />;
     }

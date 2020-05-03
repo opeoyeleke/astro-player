@@ -196,7 +196,7 @@ body {
   }
 
   .main-container {
-    color: #102542;
+    color: black;
     grid-row: 1/2;
     grid-column: 2/3;
     height: 92vh;
@@ -333,7 +333,7 @@ body {
   }
 
   .main-container-content,
-  .album-info-container {
+  .details-container {
     padding: 60px 10px 10px 10px;
   }
 
@@ -363,6 +363,20 @@ body {
   .artist,
   .title {
     text-align: center;
+  }
+
+  .details-info {
+    display: flex;
+    padding: 0 30px;
+    justify-content: space-between;
+  }
+
+  .details-info-left {
+    margin-left: 30px;
+  }
+
+  .details-info-right img {
+    border-radius: 15px;
   }
 }
 
@@ -445,10 +459,6 @@ a:visited {
   text-decoration: none;
   color: inherit;
 }
-
-/* a:active {
-  color: #F87060;
-} */
 
 .active {
   color: #f87060 !important;
