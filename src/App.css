@@ -8,7 +8,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: Roboto, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 14px;
   margin: 0;
@@ -66,7 +66,7 @@ body {
 
   .nav-item {
     display: flex;
-    padding: 13px 4vw;
+    padding: 12px 1vw;
   }
 
   .mobile-nav-item {
@@ -80,9 +80,14 @@ body {
 
     /* Our sidebar item styling */
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     color: #d1d1d1;
     transition: color 0.2s;
+  }
+
+  .bm-item:nth-child(1),
+  .bm-item:nth-child(6) {
+    border-bottom: 1px solid #505c6d;
   }
 
   /* Change color on hover */
@@ -130,7 +135,7 @@ body {
   /* General sidebar styles */
   .bm-menu {
     background: #102542;
-    padding: 2.5em 2em 0;
+    padding: 1em 2em 0;
   }
 
   /* Morph shape necessary with bubble or elastic */
@@ -173,6 +178,72 @@ body {
     font-size: 85%;
     text-align: center;
   }
+
+  .details-info {
+    display: flex;
+    padding: 10px;
+    max-width: 700px;
+    border-bottom: 1px solid #4759722c;
+  }
+
+  .details-info-left img {
+    height: 160px;
+  }
+
+  .details-info-right {
+    margin-left: 10px;
+  }
+
+  .details-info-right div {
+    margin-bottom: 6px;
+  }
+
+  .details-info-left img {
+    border-radius: 15px;
+  }
+
+  .details-contributor {
+    font-weight: 600;
+  }
+
+  .details-title {
+    display: none;
+  }
+
+  .details-bottom {
+    padding: 10px;
+  }
+
+  .details-bottom-title {
+    display: none;
+  }
+
+  .track-item {
+    width: 100%;
+    padding: 9px 0;
+    border-bottom: 1px solid #4759722c;
+  }
+
+  .track-item td {
+    max-width: 5px;
+    text-align: end;
+  }
+
+  .track-item td:nth-child(-n + 2) {
+    text-align: start;
+  }
+
+  .track-item td:nth-child(1) {
+    width: 30px;
+  }
+
+  .track-item td:nth-child(2) {
+    max-width: 20px;
+  }
+
+  .track-item td:nth-child(3) {
+    display: none;
+  }
 }
 
 /* Medium devices (landscape tablets, 720px and up) */
@@ -196,7 +267,7 @@ body {
   }
 
   .main-container {
-    color: black;
+    color: #102542;
     grid-row: 1/2;
     grid-column: 2/3;
     height: 92vh;
@@ -334,7 +405,7 @@ body {
 
   .main-container-content,
   .details-container {
-    padding: 60px 10px 10px 10px;
+    padding: 80px 10px 10px 10px;
   }
 
   .album-items {
@@ -367,16 +438,68 @@ body {
 
   .details-info {
     display: flex;
-    padding: 0 30px;
-    justify-content: space-between;
+    padding: 0px 70px;
+    max-width: 900px;
   }
 
-  .details-info-left {
-    margin-left: 30px;
+  .details-info-right {
+    margin-left: 50px;
   }
 
-  .details-info-right img {
+  .details-info-right div {
+    margin-bottom: 10px;
+  }
+
+  .details-info-left img {
     border-radius: 15px;
+  }
+
+  .details-contributor,
+  .details-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .details-bottom {
+    padding: 0px 70px;
+    max-width: 800px;
+  }
+
+  .track-item-container {
+    padding: 8px 3px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #4759722c;
+  }
+
+  .track-item {
+    width: 100%;
+  }
+
+  .track-item td {
+    max-width: 7px;
+    text-align: end;
+  }
+
+  .track-item td:nth-child(-n + 2) {
+    text-align: start;
+  }
+
+  .track-item td:nth-child(1) {
+    width: 50px;
+  }
+
+  .details-bottom-title {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px 0;
+  }
+
+  .track-item td:nth-child(5):hover {
+    cursor: pointer;
+  }
+
+  .track-item td:nth-child(5):active {
+    color: #f87060;
   }
 }
 
@@ -465,8 +588,16 @@ a:visited {
 }
 
 .nav-icon {
-  margin-right: 10px;
+  margin-right: 20px;
   transform: translateY(-1px);
+}
+
+.nav-icon:hover {
+  cursor: pointer;
+}
+
+.nav-icon:active {
+  color: #f87060;
 }
 
 .home-button {
@@ -499,4 +630,24 @@ a:visited {
 
 .image-container img:active {
   size: 90%;
+}
+
+.play-button button {
+  color: white;
+  background-color: #f87060;
+  border-radius: 15px;
+  padding: 7px 15px;
+  border-style: hidden;
+}
+
+.play-button button:hover {
+  cursor: pointer;
+}
+
+.play-button button:active {
+  background-color: #a14a41;
+}
+
+*:focus {
+  outline: none;
 }

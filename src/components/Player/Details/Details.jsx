@@ -1,5 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
+import convert from "convert-seconds";
+import { Icon } from "react-icons-kit";
+import { ic_play_arrow, ic_play_circle_filled } from "react-icons-kit/md";
+
 import Loader from "./../Loader";
 
 function Details({ album }) {
@@ -7,25 +11,44 @@ function Details({ album }) {
     return <Loader />;
   }
 
+  const duration = album.duration && convert(album.duration);
+  let trackNumber = 1;
+
   return (
     <div className="details-container">
       <div className="details-info">
         <div className="details-info-left">
-          <div className="details-contributor">
-            {album.artist && album.artist.name}
-          </div>
-          <div className="details-title">{album.title}</div>
+          <img src={album.cover_medium} alt="cover" />
         </div>
         <div className="details-info-right">
-          <img src={album.cover_medium} alt="cover" />
+          <div className="details-contributor">
+            Artist: {album.artist && album.artist.name}
+          </div>
+          <div className="details-title">Title: {album.title}</div>
+          <div>Genre: {album.genres && album.genres.data[0].name}</div>
+          <div>Tracks: {album.nb_tracks}</div>
+          <div>Released: {album.release_date}</div>
+          <div>
+            Duration: {duration && duration.hours}:
+            {duration && duration.minutes}:{duration && duration.seconds}
+          </div>
+          <div className="play-button">
+            <button>
+              <Icon size={20} icon={ic_play_arrow} />
+              Play
+            </button>
+          </div>
         </div>
       </div>
       <div className="details-bottom">
+        <div className="details-bottom-title">Tracks</div>
+
         {album.tracks &&
           album.tracks.data.map((track) => (
             <TrackItem
               key={track.id}
               id={track.id}
+              number={trackNumber++}
               title={track.title_short}
               duration={track.duration}
               artist={track.artist.name}
@@ -37,14 +60,31 @@ function Details({ album }) {
   );
 }
 
-function TrackItem({ image, title, duration, artist, trackSrc }) {
+function TrackItem({ id, number, title, duration, artist, trackSrc }) {
+  const trackDuration = convert(duration);
   return (
     <div className="track-item-container">
-      <ul className="track-item"></ul>
-      <li>{image}</li>
-      <li>{title}</li>
-      <li>{duration}</li>
-      <li>{artist}</li>
+      <table className="track-item">
+        <tbody>
+          <tr key={id}>
+            <td>{number}</td>
+            <td>{title}</td>
+            <td>{artist}</td>
+            <td>
+              {trackDuration.minutes < 10
+                ? `0${trackDuration.minutes}`
+                : trackDuration.minutes}
+              :
+              {trackDuration.seconds < 10
+                ? `0${trackDuration.seconds}`
+                : trackDuration.seconds}
+            </td>
+            <td>
+              <Icon size={20} icon={ic_play_circle_filled} />
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

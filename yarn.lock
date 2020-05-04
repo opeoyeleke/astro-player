@@ -3658,6 +3658,11 @@ content-type@~1.0.4:
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
+convert-seconds@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/convert-seconds/-/convert-seconds-1.0.1.tgz#fa0cc4e6564ed58d976cc92468493d271d430b02"
+  integrity sha1-+gzE5lZO1Y2XbMkkaEk9Jx1DCwI=
+
 convert-source-map@1.7.0, convert-source-map@^1.4.0, convert-source-map@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.7.0.tgz#17a2cb882d7f77d3490585e2ce6c524424a3a442"
@@ -9734,11 +9739,6 @@ react-scripts@^3.4.0:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
-
-react-sidenav@^4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/react-sidenav/-/react-sidenav-4.0.6.tgz#4ecb2d815b81176be2ea41d1c30039bf915ebf86"
-  integrity sha512-eP70waqkD8JpZRi7yxt9yapG/mRHsLXC9s9PChqmgDQ2P0YvE6GuZWvcyzWFV+qmWJWsBU404dgSo6wpz12LvQ==
 
 react@^16.11.0:
   version "16.11.0"

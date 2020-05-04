@@ -7,7 +7,7 @@ import { getPageTitle } from "./../../../redux/data/data.actions";
 
 class Albums extends Component {
   componentDidMount() {
-    this.props.dispatch(getPageTitle("Albums"));
+    this.props.dispatch(getPageTitle("Trending Albums"));
     this.props.dispatch(getAlbums());
   }
 

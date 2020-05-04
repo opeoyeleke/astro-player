@@ -14,6 +14,17 @@ import {
 } from "react-icons-kit/md";
 
 class NavBar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  handleMenuChange = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
   render() {
     return (
       <div className="navbar-container">
@@ -74,12 +85,24 @@ class NavBar extends Component {
             </NavLink>
           </div>
         </div>
+
         <div className="mobile-menu">
-          <Menu width={249}>
+          <Menu
+            width={249}
+            isOpen={this.state.isOpen}
+            onStateChange={() => {
+              this.setState({ isOpen: true });
+            }}
+          >
             <div className="nav-item">
               <span className="nav-title">LIBRARY</span>
             </div>
-            <div className="nav-item">
+            <div
+              className="nav-item"
+              onClick={() => {
+                this.handleMenuChange();
+              }}
+            >
               <NavLink to="/player/playlists" activeClassName="active">
                 <Icon className="nav-icon" icon={ic_queue_music} />
                 Playlists
