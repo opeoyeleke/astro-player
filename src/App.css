@@ -9,7 +9,6 @@ html::-webkit-scrollbar {
 
 body {
   font-family: Helvetica, sans-serif;
-  font-weight: 300;
   font-size: 14px;
   margin: 0;
 }
@@ -33,7 +32,7 @@ body {
   .main-container {
     grid-row: 2/6;
     grid-column: 1/2;
-    height: 88vh;
+    height: 87vh;
     color: #102542;
     overflow: scroll;
   }
@@ -41,7 +40,7 @@ body {
   .footer-container {
     grid-row: 6/7;
     grid-column: 1/2;
-    height: 6vh;
+    height: 7vh;
     background-color: white;
     color: #102542;
     display: flex;
@@ -194,6 +193,7 @@ body {
     flex-flow: row wrap;
     justify-content: flex-start;
     padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .main-container-title {
