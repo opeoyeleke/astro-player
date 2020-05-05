@@ -8,7 +8,9 @@ import { getPageTitle } from "./../../../redux/data/data.actions";
 class Albums extends Component {
   componentDidMount() {
     this.props.dispatch(getPageTitle("Trending Albums"));
-    this.props.dispatch(getAlbums());
+    if (this.props.albums === null) {
+      this.props.dispatch(getAlbums());
+    }
   }
 
   render() {
@@ -24,16 +26,17 @@ class Albums extends Component {
     return (
       <div className="main-container-content">
         <div className="album-items">
-          {albums.map((album) => (
-            <AlbumItem
-              key={album.id}
-              id={album.id}
-              image={album.cover_medium}
-              title={album.title}
-              artist={album.artist.name}
-              match={this.props.match}
-            />
-          ))}
+          {albums &&
+            albums.map((album) => (
+              <AlbumItem
+                key={album.id}
+                id={album.id}
+                image={album.cover_medium}
+                title={album.title}
+                artist={album.artist.name}
+                match={this.props.match}
+              />
+            ))}
         </div>
       </div>
     );
@@ -49,7 +52,9 @@ function AlbumItem({ match, id, image, title, artist }) {
         </Link>
       </div>
       <div className="info">
-        <div className="title">{title}</div>
+        <div className="title">
+          <Link to={`${match.url}/${id}`}>{title}</Link>
+        </div>
         <div className="artist">{artist}</div>
       </div>
     </div>

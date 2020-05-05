@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { Icon } from "react-icons-kit";
 import { ic_arrow_back } from "react-icons-kit/md";
@@ -8,7 +9,10 @@ class PageTitle extends Component {
     return (
       <div className="page-title-large">
         <div className="page-title-content">
-          <span className="header-nav-button">
+          <span
+            className="header-nav-button"
+            onClick={this.props.history.goBack}
+          >
             <Icon className="nav-icon" icon={ic_arrow_back} />
           </span>
           {this.props.title}
@@ -22,4 +26,4 @@ const mapStateToProps = (state) => ({
   title: state.data.title,
 });
 
-export default connect(mapStateToProps)(PageTitle);
+export default withRouter(connect(mapStateToProps)(PageTitle));

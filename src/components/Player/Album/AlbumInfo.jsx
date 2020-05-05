@@ -6,7 +6,9 @@ import Details from "./../Details/Details";
 
 class AlbumInfo extends Component {
   componentDidMount() {
-    this.props.dispatch(getAlbumInfo(this.props.match.params.albumId));
+    if (this.props.album.id != this.props.match.params.albumId) {
+      this.props.dispatch(getAlbumInfo(this.props.match.params.albumId));
+    }
   }
 
   render() {

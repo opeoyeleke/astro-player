@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
   title: "Albums",
   loading: false,
-  albums: [],
+  albums: null,
   album: [],
   error: null,
 };

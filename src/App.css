@@ -148,6 +148,12 @@ body {
     color: #b8b7ad;
   }
 
+  .header-nav-button {
+    position: fixed;
+    right: 10px;
+    top: 15px;
+  }
+
   .album-items {
     display: flex;
     flex-flow: row wrap;
@@ -635,7 +641,7 @@ a:visited {
 .play-button button {
   color: white;
   background-color: #f87060;
-  border-radius: 15px;
+  border-radius: 4px;
   padding: 7px 15px;
   border-style: hidden;
 }
