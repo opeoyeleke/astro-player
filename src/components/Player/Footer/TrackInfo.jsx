@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Icon } from "react-icons-kit";
+import { ic_keyboard_arrow_up } from "react-icons-kit/md";
 
 import ArtistImage from "./../../../assets/images/artist.jpg";
 
@@ -12,6 +14,7 @@ function TrackInfo(props) {
         <img src={ArtistImage} alt="artistimage" />
       </div>
       <div className="track-info">
+        <Icon className="footer-button-mobile" icon={ic_keyboard_arrow_up} />
         <div className="artist-name">{trackArtist}</div>
         <div className="track-name">{trackName}</div>
       </div>

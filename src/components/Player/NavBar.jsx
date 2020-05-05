@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { slide as Menu } from "react-burger-menu";
 import { withRouter } from "react-router-dom";
-
 import {
   ic_person,
   ic_music_note,

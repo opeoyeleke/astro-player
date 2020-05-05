@@ -15,15 +15,26 @@ import testAudio from "./../../../assets/test_audio.mp3";
 function Controls(props) {
   const { isPlaying, changeIsPlaying } = props;
 
-  // function playAudio() {
-  //   const audioFile = document.getElementsByClassName("audio-element")[0];
-  //   audioFile.play();
-  // }
+  function playAudio() {
+    const audioFile = document.getElementsByClassName("audio-element")[0];
+    audioFile.play();
+  }
 
+  function pauseAudio() {
+    const audioFile = document.getElementsByClassName("audio-element")[0];
+    audioFile.pause();
+  }
   return (
     <div className="footer-center">
       <div className="control-buttons">
-        <Icon className="control-button" size={30} icon={ic_skip_previous} />
+        <Icon
+          className="control-button"
+          size={30}
+          icon={ic_skip_previous}
+          onClick={() => {
+            playAudio();
+          }}
+        />
         {isPlaying ? (
           <Icon
             className="control-button"
@@ -43,13 +54,20 @@ function Controls(props) {
             }}
           />
         )}
-        <Icon className="control-button" size={30} icon={ic_skip_next} />
+        <Icon
+          className="control-button"
+          size={30}
+          icon={ic_skip_next}
+          onClick={() => {
+            pauseAudio();
+          }}
+        />
       </div>
       <div className="progress-bar">
         <Progress />
       </div>
       <audio className="audio-element">
-        <source src={testAudio}></source>
+        <source src="https://cdns-preview-3.dzcdn.net/stream/c-347595842cfc701bf3610f56c31a6b39-4.mp3"></source>
       </audio>
     </div>
   );
