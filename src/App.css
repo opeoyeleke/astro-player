@@ -252,7 +252,7 @@ body {
   }
 
   .details-bottom {
-    padding: 10px;
+    padding: 10px 30px;
   }
 
   .details-bottom-title {
@@ -261,7 +261,7 @@ body {
 
   .track-item {
     width: 100%;
-    padding: 9px 0;
+    padding: 12px 0;
     border-bottom: 1px solid #4759722c;
   }
 
@@ -447,7 +447,7 @@ body {
 
   .main-container-content,
   .details-container {
-    padding: 80px 10px 10px 10px;
+    padding: 70px 10px 10px 10px;
   }
 
   .album-items {
