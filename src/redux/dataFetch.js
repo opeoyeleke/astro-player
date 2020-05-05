@@ -11,9 +11,7 @@ export function getAlbums() {
   return (dispatch) => {
     dispatch(getDataBegin());
     return axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/top?limit=50`
-      )
+      .get(`https://api.deezer.com/chart/top?limit=50`)
       .then((res) => {
         dispatch(getAlbumsSuccess(res.data.albums.data));
         return res.data.albums.data;
@@ -26,9 +24,7 @@ export function getAlbumInfo(albumId) {
   return (dispatch) => {
     dispatch(getDataBegin());
     return axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumId}`
-      )
+      .get(`https://api.deezer.com/album/${albumId}`)
       .then((res) => {
         dispatch(getAlbumInfoSuccess(res.data));
         dispatch(getPageTitle(res.data.title));
