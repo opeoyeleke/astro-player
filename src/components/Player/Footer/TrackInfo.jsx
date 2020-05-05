@@ -14,7 +14,9 @@ function TrackInfo(props) {
         <img src={ArtistImage} alt="artistimage" />
       </div>
       <div className="track-info">
-        <Icon className="footer-button-mobile" icon={ic_keyboard_arrow_up} />
+        <div className="footer-button-mobile">
+          <Icon icon={ic_keyboard_arrow_up} />
+        </div>
         <div className="artist-name">{trackArtist}</div>
         <div className="track-name">{trackName}</div>
       </div>
