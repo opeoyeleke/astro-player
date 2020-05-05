@@ -8,7 +8,6 @@ import { getPageTitle } from "./../../../redux/data/data.actions";
 class AlbumInfo extends Component {
   componentDidMount() {
     // eslint-disable-next-line
-
     if (this.props.album.id == this.props.match.params.albumId) {
       this.props.dispatch(getPageTitle(this.props.album.title));
     }
