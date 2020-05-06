@@ -1,4 +1,4 @@
-export const changeIsPlaying = () => ({
+export const setPlayPause = () => ({
   type: "PLAY_PAUSE",
 });
 
@@ -7,6 +7,6 @@ export const muteUnmute = () => ({
 });
 
 export const setActiveTrack = (track) => ({
-  type: "SET_ACTIVETRACK",
-  payload: track,
+  type: "SET_ACTIVE_TRACK",
+  payload: { track },
 });

@@ -22,10 +22,10 @@ const trackReducer = (state = INITIAL_STATE, action) => {
         ...state,
         muteSound: !state.muteSound,
       };
-    case "SET_ACTIVETRACK":
+    case "SET_ACTIVE_TRACK":
       return {
         ...state,
-        activeTrack: action.payload,
+        activeTrack: action.payload.track,
       };
     default:
       return state;

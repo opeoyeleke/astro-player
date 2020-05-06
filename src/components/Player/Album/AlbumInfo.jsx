@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { getAlbumInfo } from "./../../../redux/dataFetch";
 import { connect } from "react-redux";
 import Loader from "../Loader";
 import Details from "./../Details/Details";
 import { getPageTitle } from "./../../../redux/data/data.actions";
+import { getAlbumInfo } from "./../../../redux/dataFetch";
 
 class AlbumInfo extends Component {
   componentDidMount() {

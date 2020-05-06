@@ -26,7 +26,6 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <div id="dz-root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -37,10 +36,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div id="dz-root"></div>
     <script>
       DZ.init({
-        appId: "412242",
-        channelUrl: "https://astro-player.herokuapp.com/",
+        appId: "YOUR_APP_ID",
+        channelUrl: "http://YOUR_DOMAIN/channel.html",
       });
     </script>
   </body>

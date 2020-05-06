@@ -8,12 +8,15 @@ import {
 } from "react-icons-kit/md";
 import { connect } from "react-redux";
 
-import { changeIsPlaying } from "../../../redux/track/track.actions";
+import { setPlayPause } from "../../../redux/track/track.actions";
 import Progress from "./Progress";
 import testAudio from "./../../../assets/test_audio.mp3";
 
 function Controls(props) {
-  const { isPlaying, changeIsPlaying } = props;
+  const { isPlaying, setPlayPause, activeTrack } = props;
+
+  let audioSrc =
+    "https://cdns-preview-2.dzcdn.net/stream/c-2b76346512f4b8b3af0a6e3ac9489d42-4.mp3";
 
   function playAudio() {
     const audioFile = document.getElementsByClassName("audio-element")[0];
@@ -41,7 +44,7 @@ function Controls(props) {
             size={30}
             icon={ic_pause}
             onClick={() => {
-              changeIsPlaying();
+              setPlayPause();
             }}
           />
         ) : (
@@ -50,7 +53,7 @@ function Controls(props) {
             size={30}
             icon={ic_play_arrow}
             onClick={() => {
-              changeIsPlaying();
+              setPlayPause();
             }}
           />
         )}
@@ -67,7 +70,7 @@ function Controls(props) {
         <Progress />
       </div>
       <audio className="audio-element">
-        <source src="https://cdns-preview-3.dzcdn.net/stream/c-347595842cfc701bf3610f56c31a6b39-4.mp3"></source>
+        <source src={audioSrc}></source>
       </audio>
     </div>
   );
@@ -75,10 +78,11 @@ function Controls(props) {
 
 const mapStateToProps = (state) => ({
   isPlaying: state.track.isPlaying,
+  activeTrack: state.track.activeTrack,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeIsPlaying: () => dispatch(changeIsPlaying()),
+  setPlayPause: () => dispatch(setPlayPause()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Controls);

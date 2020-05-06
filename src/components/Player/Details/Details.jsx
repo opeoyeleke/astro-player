@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 import convert from "convert-seconds";
 import { Icon } from "react-icons-kit";
 import { ic_play_arrow, ic_play_circle_filled } from "react-icons-kit/md";
+import { getTrackInfo } from "./../../../redux/dataFetch";
 
 import Loader from "./../Loader";
 
-function Details({ album }) {
+function Details({ album, getTrackInfo }) {
   if (!album) {
     return <Loader />;
   }
@@ -53,6 +54,7 @@ function Details({ album }) {
               duration={track.duration}
               artist={track.artist.name}
               trackSrc={track.preview}
+              getTrackInfo={getTrackInfo}
             />
           ))}
       </div>
@@ -60,7 +62,7 @@ function Details({ album }) {
   );
 }
 
-function TrackItem({ id, number, title, duration, artist, trackSrc }) {
+function TrackItem({ id, number, title, duration, artist, getTrackInfo }) {
   const trackDuration = convert(duration);
   return (
     <div className="track-item-container">
@@ -80,7 +82,13 @@ function TrackItem({ id, number, title, duration, artist, trackSrc }) {
                 : trackDuration.seconds}
             </td>
             <td>
-              <Icon size={20} icon={ic_play_circle_filled} />
+              <Icon
+                size={20}
+                icon={ic_play_circle_filled}
+                onClick={() => {
+                  getTrackInfo(id);
+                }}
+              />
             </td>
           </tr>
         </tbody>
@@ -89,4 +97,8 @@ function TrackItem({ id, number, title, duration, artist, trackSrc }) {
   );
 }
 
-export default connect()(Details);
+const mapDispatchToProps = (dispatch) => ({
+  getTrackInfo: (id) => dispatch(getTrackInfo(id)),
+});
+
+export default connect(null, mapDispatchToProps)(Details);
