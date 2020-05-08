@@ -4,9 +4,6 @@ import Albums from "./Album/Albums";
 import TrackList from "./Tracks/TrackList";
 import Playlists from "./Playlist/Playlists";
 import Artists from "./Artist/Artists";
-import Store from "./Store/Store";
-import Radio from "./Discover/Radio";
-import ForYou from "./Discover/ForYou";
 import Header from "./Header";
 import AlbumInfo from "./Album/AlbumInfo";
 import ArtistInfo from "./Artist/ArtistInfo";
@@ -33,9 +30,6 @@ export default class MainSection extends Component {
           <Route exact path="/player/tracks" component={TrackList} />
           <Route exact path="/player/playlists" component={Playlists} />
           <Route exact path="/player/artists" component={Artists} />
-          <Route exact path="/player/store" component={Store} />
-          <Route exact path="/player/radio" component={Radio} />
-          <Route exact path="/player/foryou" component={ForYou} />
         </Switch>
       </div>
     );

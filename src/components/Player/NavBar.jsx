@@ -11,7 +11,6 @@ import {
   ic_queue_music,
   ic_radio,
   ic_favorite,
-  ic_stars,
   ic_arrow_back,
 } from "react-icons-kit/md";
 
@@ -50,27 +49,6 @@ class NavBar extends Component {
         </div>
         <div className="bottom-nav">
           <div className="nav-item">
-            <span className="nav-title">DISCOVER</span>
-          </div>
-          <div className="nav-item">
-            <NavLink to="/player/store" activeClassName="active">
-              <Icon className="nav-icon" icon={ic_stars} />
-              Store
-            </NavLink>
-          </div>
-          <div className="nav-item">
-            <NavLink to="/player/radio" activeClassName="active">
-              <Icon className="nav-icon" icon={ic_radio} />
-              Radio
-            </NavLink>
-          </div>
-          <div className="nav-item">
-            <NavLink to="/player/foryou" activeClassName="active">
-              <Icon className="nav-icon" icon={ic_favorite} />
-              For You
-            </NavLink>
-          </div>
-          <div className="nav-item">
             <NavLink to="/" activeClassName="" className="home-button">
               Home
             </NavLink>
@@ -104,27 +82,6 @@ class NavBar extends Component {
               <NavLink to="/player/tracks" activeClassName="active">
                 <Icon className="nav-icon" icon={ic_music_note} />
                 Tracks
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <span className="nav-title">DISCOVER</span>
-            </div>
-            <div className="nav-item">
-              <NavLink to="/player/store" activeClassName="active">
-                <Icon className="nav-icon" icon={ic_stars} />
-                Store
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <NavLink to="/player/radio" activeClassName="active">
-                <Icon className="nav-icon" icon={ic_radio} />
-                Radio
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <NavLink to="/player/foryou" activeClassName="active">
-                <Icon className="nav-icon" icon={ic_favorite} />
-                For You
               </NavLink>
             </div>
             <div className="nav-item">

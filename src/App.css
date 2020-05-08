@@ -120,7 +120,7 @@ body {
   }
 
   .bm-item:nth-child(1),
-  .bm-item:nth-child(6) {
+  .bm-item:nth-child(5) {
     border-bottom: 1px solid #505c6d;
   }
 
@@ -335,10 +335,6 @@ body {
   .nav-item {
     padding: 16px 2vw;
     text-transform: capitalize;
-  }
-
-  .bottom-nav .nav-item:nth-child(6) {
-    margin-top: 40px;
   }
 
   .top-nav {

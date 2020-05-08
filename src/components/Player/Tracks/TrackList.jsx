@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Loader from "./../Loader";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getTracks } from "./../../../redux/dataFetch";
 import { getPageTitle } from "./../../../redux/data/data.actions";
@@ -46,14 +45,10 @@ function TrackItem({ match, id, image, title, artist }) {
   return (
     <div className="main-container-item-container">
       <div className="image-container">
-        <Link to={`${match.url}/${id}`}>
-          <img src={image} alt="album cover" />
-        </Link>
+        <img src={image} alt="album cover" />
       </div>
       <div className="info">
-        <div className="title">
-          <Link to={`${match.url}/${id}`}>{title}</Link>
-        </div>
+        <div className="title">{title}</div>
         <div className="artist">{artist}</div>
       </div>
     </div>
