@@ -129,8 +129,6 @@ body {
     color: white;
   }
 
-  /* The rest copied directly from react-burger-menu docs */
-
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: fixed;
@@ -519,7 +517,7 @@ body {
 
   .track-item td {
     max-width: 7px;
-    text-align: end;
+    text-align: center;
   }
 
   .track-item td:nth-child(-n + 2) {
@@ -528,6 +526,15 @@ body {
 
   .track-item td:nth-child(1) {
     width: 50px;
+  }
+
+  .track-item td:nth-child(2) {
+    width: 250px;
+  }
+
+  .track-item td:nth-child(5) {
+    width: 50px;
+    text-align: end;
   }
 
   .details-bottom-title {

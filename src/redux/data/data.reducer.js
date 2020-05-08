@@ -1,11 +1,12 @@
 const INITIAL_STATE = {
-  title: "Albums",
+  title: "loading...",
   loading: false,
   albums: null,
   tracks: null,
   playlists: null,
   artists: null,
   album: [],
+  artist: null,
   error: null,
 };
 
@@ -57,6 +58,12 @@ const dataReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         album: action.payload.album,
+      };
+    case "GET_ARTIST_INFO_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        artist: action.payload.artist,
       };
     default:
       return state;

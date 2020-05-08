@@ -36,3 +36,8 @@ export const getAlbumInfoSuccess = (album) => ({
   type: "GET_ALBUM_INFO_SUCCESS",
   payload: { album },
 });
+
+export const getArtistInfoSuccess = (artist) => ({
+  type: "GET_ARTIST_INFO_SUCCESS",
+  payload: { artist },
+});

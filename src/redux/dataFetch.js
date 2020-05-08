@@ -7,6 +7,7 @@ import {
   getTracksSuccess,
   getArtistsSuccess,
   getAlbumInfoSuccess,
+  getArtistInfoSuccess,
   getPageTitle,
 } from "./data/data.actions";
 
@@ -82,6 +83,22 @@ export function getAlbumInfo(albumId) {
       .then((res) => {
         dispatch(getAlbumInfoSuccess(res.data));
         dispatch(getPageTitle(res.data.title));
+        return res.data;
+      })
+      .catch((error) => dispatch(getDataFailure(error)));
+  };
+}
+
+export function getArtistInfo(artistId) {
+  return (dispatch) => {
+    dispatch(getDataBegin());
+    return axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${artistId}/top?limit=50`
+      )
+      .then((res) => {
+        dispatch(getArtistInfoSuccess(res.data.data));
+        dispatch(getPageTitle(res.data.data[0].artist.name));
         return res.data;
       })
       .catch((error) => dispatch(getDataFailure(error)));

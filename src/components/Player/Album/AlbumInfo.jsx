@@ -10,9 +10,8 @@ class AlbumInfo extends Component {
     // eslint-disable-next-line
     if (this.props.album.id == this.props.match.params.albumId) {
       this.props.dispatch(getPageTitle(this.props.album.title));
-    }
-    // eslint-disable-next-line
-    if (this.props.album.id != this.props.match.params.albumId) {
+    } else {
+      // eslint-disable-next-line
       this.props.dispatch(getAlbumInfo(this.props.match.params.albumId));
     }
   }
