@@ -188,7 +188,7 @@ body {
     top: 15px;
   }
 
-  .album-items {
+  .main-container-items {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -199,7 +199,7 @@ body {
   .main-container-title {
     padding-left: 5vw;
   }
-  .album-item-container {
+  .main-container-item-container {
     width: 31vw;
     padding: 4px;
   }
@@ -450,7 +450,7 @@ body {
     padding: 70px 10px 10px 10px;
   }
 
-  .album-items {
+  .main-container-items {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -459,7 +459,7 @@ body {
   .main-container-title {
     padding-left: 5vw;
   }
-  .album-item-container {
+  .main-container-item-container {
     width: 18vw;
     margin: 1vh 0 1vh 15px;
   }
@@ -566,7 +566,7 @@ body {
     width: 50vw;
   }
 
-  .album-item-container {
+  .main-container-item-container {
     width: 14vw;
     margin: 1vh 0 1vh 18px;
   }
@@ -588,7 +588,7 @@ body {
     padding: 16px 4vw;
   }
 
-  .album-item-container {
+  .main-container-item-container {
     width: 14vw;
     margin: 1vh 0 1vh 30px;
   }

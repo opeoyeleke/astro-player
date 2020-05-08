@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import TrackInfo from "./TrackInfo";
 import Controls from "./Controls";
 import VolumeRepeat from "./VolumeRepeat";
@@ -17,10 +19,12 @@ class Footer extends Component {
   };
 
   render() {
+    const { activeTrack } = this.props;
+
     return (
       <div className="footer-container">
         <TrackInfo />
-        <Controls />
+        <Controls activeTrack={activeTrack} />
         <VolumeRepeat
           repeatTracks={this.state.repeatTracks}
           changeRepeat={this.changeRepeat}
@@ -30,4 +34,8 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+const mapStateToProps = (state) => ({
+  activeTrack: state.track.activeTrack,
+});
+
+export default connect(mapStateToProps)(Footer);

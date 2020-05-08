@@ -10,10 +10,10 @@ import { connect } from "react-redux";
 
 import { setPlayPause } from "../../../redux/track/track.actions";
 import Progress from "./Progress";
-import testAudio from "./../../../assets/test_audio.mp3";
+// import testAudio from "./../../../assets/test_audio.mp3";
 
 function Controls(props) {
-  const { isPlaying, setPlayPause, activeTrack } = props;
+  const { isPlaying, setPlayPause } = props;
 
   let audioSrc =
     "https://cdns-preview-2.dzcdn.net/stream/c-2b76346512f4b8b3af0a6e3ac9489d42-4.mp3";
@@ -78,7 +78,6 @@ function Controls(props) {
 
 const mapStateToProps = (state) => ({
   isPlaying: state.track.isPlaying,
-  activeTrack: state.track.activeTrack,
 });
 
 const mapDispatchToProps = (dispatch) => ({

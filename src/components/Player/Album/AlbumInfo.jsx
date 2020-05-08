@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Loader from "../Loader";
-import Details from "./../Details/Details";
+import AlbumDetail from "./AlbumDetail";
 import { getPageTitle } from "./../../../redux/data/data.actions";
 import { getAlbumInfo } from "./../../../redux/dataFetch";
 
@@ -27,7 +27,7 @@ class AlbumInfo extends Component {
       return <Loader />;
     }
 
-    return <Details album={album} />;
+    return <AlbumDetail album={album} />;
   }
 }
 

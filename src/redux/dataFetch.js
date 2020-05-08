@@ -3,6 +3,9 @@ import {
   getDataBegin,
   getDataFailure,
   getAlbumsSuccess,
+  getPlaylistsSuccess,
+  getTracksSuccess,
+  getArtistsSuccess,
   getAlbumInfoSuccess,
   getPageTitle,
 } from "./data/data.actions";
@@ -24,11 +27,58 @@ export function getAlbums() {
   };
 }
 
+export function getPlaylists() {
+  return (dispatch) => {
+    dispatch(getDataBegin());
+    return axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/top?limit=50`
+      )
+      .then((res) => {
+        dispatch(getPlaylistsSuccess(res.data.playlists.data));
+        return res.data.playlists.data;
+      })
+      .catch((error) => dispatch(getDataFailure(error)));
+  };
+}
+
+export function getArtists() {
+  return (dispatch) => {
+    dispatch(getDataBegin());
+    return axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/top?limit=50`
+      )
+      .then((res) => {
+        dispatch(getArtistsSuccess(res.data.artists.data));
+        return res.data.artists.data;
+      })
+      .catch((error) => dispatch(getDataFailure(error)));
+  };
+}
+
+export function getTracks() {
+  return (dispatch) => {
+    dispatch(getDataBegin());
+    return axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/top?limit=50`
+      )
+      .then((res) => {
+        dispatch(getTracksSuccess(res.data.tracks.data));
+        return res.data.tracks.data;
+      })
+      .catch((error) => dispatch(getDataFailure(error)));
+  };
+}
+
 export function getAlbumInfo(albumId) {
   return (dispatch) => {
     dispatch(getDataBegin());
     return axios
-      .get(`https://api.deezer.com/album/${albumId}`)
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumId}`
+      )
       .then((res) => {
         dispatch(getAlbumInfoSuccess(res.data));
         dispatch(getPageTitle(res.data.title));

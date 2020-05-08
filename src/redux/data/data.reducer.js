@@ -2,6 +2,9 @@ const INITIAL_STATE = {
   title: "Albums",
   loading: false,
   albums: null,
+  tracks: null,
+  playlists: null,
+  artists: null,
   album: [],
   error: null,
 };
@@ -30,6 +33,24 @@ const dataReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         albums: action.payload.albums,
+      };
+    case "GET_ARTISTS_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        artists: action.payload.artists,
+      };
+    case "GET_PLAYLISTS_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        playlists: action.payload.playlists,
+      };
+    case "GET_TRACKS_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        tracks: action.payload.tracks,
       };
     case "GET_ALBUM_INFO_SUCCESS":
       return {

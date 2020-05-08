@@ -25,7 +25,7 @@ class Albums extends Component {
 
     return (
       <div className="main-container-content">
-        <div className="album-items">
+        <div className="main-container-items">
           {albums &&
             albums.map((album) => (
               <AlbumItem
@@ -45,7 +45,7 @@ class Albums extends Component {
 
 function AlbumItem({ match, id, image, title, artist }) {
   return (
-    <div className="album-item-container">
+    <div className="main-container-item-container">
       <div className="image-container">
         <Link to={`${match.url}/${id}`}>
           <img src={image} alt="album cover" />

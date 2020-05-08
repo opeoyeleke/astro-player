@@ -9,6 +9,8 @@ import Radio from "./Discover/Radio";
 import ForYou from "./Discover/ForYou";
 import Header from "./Header";
 import AlbumInfo from "./Album/AlbumInfo";
+import ArtistInfo from "./Artist/ArtistInfo";
+import PlaylistInfo from "./Playlist/PlaylistInfo";
 
 export default class MainSection extends Component {
   render() {
@@ -17,6 +19,16 @@ export default class MainSection extends Component {
         <Header />
         <Switch>
           <Route exact path={`/player/albums/:albumId`} component={AlbumInfo} />
+          <Route
+            exact
+            path={`/player/playlists/:playlistId`}
+            component={PlaylistInfo}
+          />
+          <Route
+            exact
+            path={`/player/artists/:artistId`}
+            component={ArtistInfo}
+          />
           <Route exact path="/player/albums" component={Albums} />
           <Route exact path="/player/tracks" component={TrackList} />
           <Route exact path="/player/playlists" component={Playlists} />
