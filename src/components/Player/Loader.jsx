@@ -9,7 +9,7 @@ export default class App extends React.Component {
       <div className="loader-container">
         <Loader
           type="Circles"
-          color="#102542"
+          color="#1a092e"
           height={50}
           width={50}
           timeout={30000000}
