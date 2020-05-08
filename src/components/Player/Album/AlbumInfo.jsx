@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Loader from "../Loader";
 import AlbumDetail from "./AlbumDetail";
 import { getPageTitle } from "./../../../redux/data/data.actions";
-import { getAlbumInfo } from "./../../../redux/dataFetch";
+import { getAlbumTracks } from "./../../../redux/dataFetch";
 
 class AlbumInfo extends Component {
   componentDidMount() {
@@ -12,7 +12,7 @@ class AlbumInfo extends Component {
       this.props.dispatch(getPageTitle(this.props.album.title));
     } else {
       // eslint-disable-next-line
-      this.props.dispatch(getAlbumInfo(this.props.match.params.albumId));
+      this.props.dispatch(getAlbumTracks(this.props.match.params.albumId));
     }
   }
 

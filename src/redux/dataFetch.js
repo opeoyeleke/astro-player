@@ -2,13 +2,14 @@ import axios from "axios";
 import {
   getDataBegin,
   getDataFailure,
+  getPageTitle,
   getAlbumsSuccess,
   getPlaylistsSuccess,
   getTracksSuccess,
   getArtistsSuccess,
-  getAlbumInfoSuccess,
-  getArtistInfoSuccess,
-  getPageTitle,
+  getAlbumTracksSuccess,
+  getArtistTracksSuccess,
+  getPlaylistTracksSuccess,
 } from "./data/data.actions";
 
 import { setActiveTrack } from "./track/track.actions";
@@ -73,7 +74,7 @@ export function getTracks() {
   };
 }
 
-export function getAlbumInfo(albumId) {
+export function getAlbumTracks(albumId) {
   return (dispatch) => {
     dispatch(getDataBegin());
     return axios
@@ -81,7 +82,7 @@ export function getAlbumInfo(albumId) {
         `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumId}`
       )
       .then((res) => {
-        dispatch(getAlbumInfoSuccess(res.data));
+        dispatch(getAlbumTracksSuccess(res.data));
         dispatch(getPageTitle(res.data.title));
         return res.data;
       })
@@ -89,7 +90,7 @@ export function getAlbumInfo(albumId) {
   };
 }
 
-export function getArtistInfo(artistId) {
+export function getArtistTracks(artistId) {
   return (dispatch) => {
     dispatch(getDataBegin());
     return axios
@@ -97,8 +98,24 @@ export function getArtistInfo(artistId) {
         `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${artistId}/top?limit=50`
       )
       .then((res) => {
-        dispatch(getArtistInfoSuccess(res.data.data));
+        dispatch(getArtistTracksSuccess(res.data.data));
         dispatch(getPageTitle(res.data.data[0].artist.name));
+        return res.data;
+      })
+      .catch((error) => dispatch(getDataFailure(error)));
+  };
+}
+
+export function getPlaylistTracks(playlistId) {
+  return (dispatch) => {
+    dispatch(getDataBegin());
+    return axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/playlist/${playlistId}`
+      )
+      .then((res) => {
+        dispatch(getPlaylistTracksSuccess(res.data));
+        dispatch(getPageTitle(res.data.title));
         return res.data;
       })
       .catch((error) => dispatch(getDataFailure(error)));

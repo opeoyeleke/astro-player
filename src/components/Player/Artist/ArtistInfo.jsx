@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Loader from "../Loader";
 import ArtistDetail from "./ArtistDetail";
 import { getPageTitle } from "./../../../redux/data/data.actions";
-import { getArtistInfo } from "./../../../redux/dataFetch";
+import { getArtistTracks } from "./../../../redux/dataFetch";
 
 class ArtistInfo extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class ArtistInfo extends Component {
     ) {
       this.props.dispatch(getPageTitle(this.props.artist[0].artist.name));
     } else {
-      this.props.dispatch(getArtistInfo(this.props.match.params.artistId));
+      this.props.dispatch(getArtistTracks(this.props.match.params.artistId));
     }
   }
 

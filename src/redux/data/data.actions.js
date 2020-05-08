@@ -32,12 +32,17 @@ export const getTracksSuccess = (tracks) => ({
   payload: { tracks },
 });
 
-export const getAlbumInfoSuccess = (album) => ({
-  type: "GET_ALBUM_INFO_SUCCESS",
+export const getAlbumTracksSuccess = (album) => ({
+  type: "GET_ALBUM_TRACKS_SUCCESS",
   payload: { album },
 });
 
-export const getArtistInfoSuccess = (artist) => ({
-  type: "GET_ARTIST_INFO_SUCCESS",
+export const getArtistTracksSuccess = (artist) => ({
+  type: "GET_ARTIST_TRACKS_SUCCESS",
   payload: { artist },
+});
+
+export const getPlaylistTracksSuccess = (playlist) => ({
+  type: "GET_PLAYLIST_TRACKS_SUCCESS",
+  payload: { playlist },
 });
