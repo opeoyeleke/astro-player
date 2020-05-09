@@ -3,17 +3,18 @@ import Loader from "./../Loader";
 import { connect } from "react-redux";
 import { getTracks } from "./../../../redux/dataFetch";
 import { getPageTitle } from "./../../../redux/data/data.actions";
+import { getTrackInfo } from "../../../redux/dataFetch";
 
 class TrackList extends Component {
   componentDidMount() {
-    this.props.dispatch(getPageTitle("Recommended Releases"));
+    this.props.getPageTitle("Recommended Releases");
     if (this.props.tracks === null) {
-      this.props.dispatch(getTracks());
+      this.props.getTracks();
     }
   }
 
   render() {
-    const { error, loading, tracks } = this.props;
+    const { error, loading, tracks, getTrackInfo } = this.props;
 
     if (error) {
       return <div>Error! {error.message}</div>;
@@ -32,7 +33,7 @@ class TrackList extends Component {
                 image={track.album.cover_medium}
                 title={track.title}
                 artist={track.artist.name}
-                match={this.props.match}
+                getTrackInfo={getTrackInfo}
               />
             ))}
         </div>
@@ -41,11 +42,17 @@ class TrackList extends Component {
   }
 }
 
-function TrackItem({ match, id, image, title, artist }) {
+function TrackItem({ getTrackInfo, id, image, title, artist }) {
   return (
     <div className="main-container-item-container">
       <div className="image-container">
-        <img src={image} alt="album cover" />
+        <img
+          src={image}
+          alt="album cover"
+          onClick={() => {
+            getTrackInfo(id);
+          }}
+        />
       </div>
       <div className="info">
         <div className="title">{title}</div>
@@ -61,4 +68,10 @@ const mapStateToProps = (state) => ({
   error: state.data.error,
 });
 
-export default connect(mapStateToProps)(TrackList);
+const mapDispatchToProps = (dispatch) => ({
+  getTrackInfo: (id) => dispatch(getTrackInfo(id)),
+  getPageTitle: (title) => dispatch(getPageTitle(title)),
+  getTracks: () => dispatch(getTracks()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrackList);

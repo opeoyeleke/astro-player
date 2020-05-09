@@ -6,12 +6,9 @@ import {
   ic_repeat,
   ic_repeat_one,
 } from "react-icons-kit/md";
-import { connect } from "react-redux";
-
-import { muteUnmute } from "../../../redux/track/track.actions";
 
 function VolumeRepeat(props) {
-  const { muteSound, muteUnmute, repeatTracks, changeRepeat } = props;
+  const { muteSound, changeMute, repeatTracks, changeRepeat } = props;
 
   return (
     <div className="footer-right">
@@ -21,7 +18,7 @@ function VolumeRepeat(props) {
           size={30}
           icon={ic_volume_mute}
           onClick={() => {
-            muteUnmute();
+            changeMute();
           }}
         />
       ) : (
@@ -30,7 +27,7 @@ function VolumeRepeat(props) {
           size={30}
           icon={ic_volume_up}
           onClick={() => {
-            muteUnmute();
+            changeMute();
           }}
         />
       )}
@@ -57,12 +54,4 @@ function VolumeRepeat(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  muteSound: state.track.muteSound,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  muteUnmute: () => dispatch(muteUnmute()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(VolumeRepeat);
+export default VolumeRepeat;

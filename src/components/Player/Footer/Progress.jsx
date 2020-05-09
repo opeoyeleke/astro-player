@@ -40,10 +40,22 @@ export default class Progress extends Component {
   }
 
   render() {
+    const { currentTime, duration } = this.props;
+
     return (
       <div className="progress">
-        <span className="elapsed" ref={this.elapsed}>
-          0:00
+        <span className="elapsed">
+          {currentTime
+            ? currentTime.minutes < 10
+              ? `0${currentTime.minutes}`
+              : currentTime.minutes
+            : "0"}
+          :
+          {currentTime
+            ? currentTime.seconds < 10
+              ? `0${currentTime.seconds}`
+              : currentTime.seconds
+            : "00"}
         </span>
         <progress
           onClick={this.changeSeek}
@@ -51,8 +63,18 @@ export default class Progress extends Component {
           max={1}
           ref={this.progress}
         />
-        <span className="duration" ref={this.duration}>
-          0:00
+        <span className="duration">
+          {duration
+            ? duration.minutes < 10
+              ? `0${duration.minutes}`
+              : duration.minutes
+            : "0"}
+          :
+          {duration
+            ? duration.seconds < 10
+              ? `0${duration.seconds}`
+              : duration.seconds
+            : "00"}
         </span>
       </div>
     );

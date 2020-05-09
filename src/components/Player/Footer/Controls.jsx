@@ -6,27 +6,12 @@ import {
   ic_pause,
   ic_skip_next,
 } from "react-icons-kit/md";
-import { connect } from "react-redux";
 
-import { setPlayPause } from "../../../redux/track/track.actions";
 import Progress from "./Progress";
-// import testAudio from "./../../../assets/test_audio.mp3";
 
 function Controls(props) {
-  const { isPlaying, setPlayPause } = props;
+  const { isPlaying, changeIsPlaying, duration, currentTime } = props;
 
-  let audioSrc =
-    "https://cdns-preview-2.dzcdn.net/stream/c-2b76346512f4b8b3af0a6e3ac9489d42-4.mp3";
-
-  function playAudio() {
-    const audioFile = document.getElementsByClassName("audio-element")[0];
-    audioFile.play();
-  }
-
-  function pauseAudio() {
-    const audioFile = document.getElementsByClassName("audio-element")[0];
-    audioFile.pause();
-  }
   return (
     <div className="footer-center">
       <div className="control-buttons">
@@ -34,9 +19,7 @@ function Controls(props) {
           className="control-button"
           size={30}
           icon={ic_skip_previous}
-          onClick={() => {
-            playAudio();
-          }}
+          onClick={() => {}}
         />
         {isPlaying ? (
           <Icon
@@ -44,7 +27,7 @@ function Controls(props) {
             size={30}
             icon={ic_pause}
             onClick={() => {
-              setPlayPause();
+              changeIsPlaying();
             }}
           />
         ) : (
@@ -53,7 +36,7 @@ function Controls(props) {
             size={30}
             icon={ic_play_arrow}
             onClick={() => {
-              setPlayPause();
+              changeIsPlaying();
             }}
           />
         )}
@@ -61,27 +44,14 @@ function Controls(props) {
           className="control-button"
           size={30}
           icon={ic_skip_next}
-          onClick={() => {
-            pauseAudio();
-          }}
+          onClick={() => {}}
         />
       </div>
       <div className="progress-bar">
-        <Progress />
+        <Progress currentTime={currentTime} duration={duration} />
       </div>
-      <audio className="audio-element">
-        <source src={audioSrc}></source>
-      </audio>
     </div>
   );
 }
 
-const mapStateToProps = (state) => ({
-  isPlaying: state.track.isPlaying,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setPlayPause: () => dispatch(setPlayPause()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Controls);
+export default Controls;

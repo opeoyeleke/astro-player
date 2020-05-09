@@ -9,8 +9,6 @@ import {
   ic_music_note,
   ic_album,
   ic_queue_music,
-  ic_radio,
-  ic_favorite,
   ic_arrow_back,
 } from "react-icons-kit/md";
 
