@@ -9,7 +9,8 @@ export default function Home() {
       <div className="home-left">
         <div className="home-title">Astro Player</div>
         <div className="home-desc">
-          A web-based music streaming app built with React, Redux and Deezer API
+          A responsive web-based music streaming app built with React, Redux and
+          Deezer API
         </div>
         <button className="button-home">
           <Link to="/player/albums">Go to Player</Link>
