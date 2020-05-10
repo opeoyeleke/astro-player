@@ -1,6 +1,5 @@
 html {
   scrollbar-width: none;
-  min-width: 700px;
 }
 
 html::-webkit-scrollbar {
@@ -111,6 +110,7 @@ body {
   /* Individual item */
   .bm-item {
     display: inline-block;
+    text-align: start;
 
     /* Our sidebar item styling */
     text-decoration: none;
@@ -143,6 +143,10 @@ body {
     left: 70px;
     top: 19px;
     transform: translateY(-3px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 60vw;
   }
 
   .page-title-large {
@@ -231,6 +235,7 @@ body {
 
   .details-info-right {
     margin-left: 10px;
+    text-align: start;
   }
 
   .details-info-right div {
@@ -283,6 +288,43 @@ body {
   .track-item td:nth-child(3),
   .track-item td:nth-child(4) {
     display: none;
+  }
+
+  .home-container {
+    color: #1a092e;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-left {
+    margin: 30px 20px;
+  }
+
+  .home-left div {
+    margin: 20px 5px;
+  }
+
+  .home-title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .home-desc {
+    font-size: 20px;
+    color: #666666;
+  }
+
+  .button-home {
+    color: white;
+    background-color: #1a092e;
+    border-radius: 4px;
+    padding: 13px 25px;
+    border-style: hidden;
+  }
+
+  .home-right img {
+    max-width: 80vw;
   }
 }
 
@@ -350,7 +392,7 @@ body {
 
   .artist-image-small img {
     height: 42px;
-    border-radius: 50%;
+    border-radius: 5px;
   }
 
   .artist-image-small img:hover,
@@ -550,6 +592,50 @@ body {
   .footer-button-mobile {
     display: none;
   }
+
+  .home-container {
+    display: flex;
+    color: #1a092e;
+  }
+
+  .home-left {
+    width: 40vw;
+    margin: 15vh 40px;
+  }
+
+  .home-left div {
+    margin: 30px 5px;
+  }
+
+  .home-title {
+    font-size: 60px;
+    font-weight: 600;
+  }
+
+  .home-desc {
+    font-size: 30px;
+    color: #666666;
+  }
+
+  .button-home {
+    color: white;
+    background-color: #1a092e;
+    border-radius: 4px;
+    padding: 13px 25px;
+    border-style: hidden;
+  }
+
+  .home-right {
+    width: 50vw;
+    margin: 70px 0px;
+    text-align: end;
+  }
+
+  .home-right img {
+    height: auto;
+    max-width: 43vw;
+    width: auto;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -652,7 +738,7 @@ a:visited {
 .home-button {
   padding: 10px 25px;
   background: rgba(169, 169, 169, 0.281);
-  border-radius: 15px;
+  border-radius: 4px;
 }
 
 .artist {
@@ -699,4 +785,20 @@ a:visited {
 
 *:focus {
   outline: none;
+}
+
+.home-left div a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.home-left div a img {
+  margin-right: 5px;
+  height: 19px;
+  transform: translateY(1px);
+}
+
+.home-left div a:active {
+  color: #a14a41;
 }

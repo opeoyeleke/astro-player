@@ -5,7 +5,6 @@ import convert from "convert-seconds";
 import TrackInfo from "./TrackInfo";
 import Controls from "./Controls";
 import VolumeRepeat from "./VolumeRepeat";
-import { getTrackInfo } from "../../../redux/dataFetch";
 
 class Footer extends Component {
   constructor() {
@@ -20,7 +19,6 @@ class Footer extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(getTrackInfo(919708552));
     this.player.addEventListener("timeupdate", (e) => {
       this.setState({
         currentTime: e.target.currentTime,
@@ -34,7 +32,6 @@ class Footer extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(this.props.activeTrack);
     if (this.props.activeTrack !== prevProps.activeTrack) {
       const track = this.props.activeTrack.preview;
       if (track) {
