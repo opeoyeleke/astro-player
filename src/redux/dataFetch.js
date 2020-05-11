@@ -10,6 +10,7 @@ import {
   getAlbumTracksSuccess,
   getArtistTracksSuccess,
   getPlaylistTracksSuccess,
+  getSearchSuccess,
 } from "./data/data.actions";
 
 import { setActiveTrack } from "./track/track.actions";
@@ -133,5 +134,21 @@ export function getTrackInfo(trackId) {
         return res.data;
       })
       .catch((error) => console.log(error));
+  };
+}
+
+export function getSearchResult(query) {
+  return (dispatch) => {
+    dispatch(getDataBegin());
+    return axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${query}`
+      )
+      .then((res) => {
+        dispatch(getSearchSuccess(res.data.data));
+        dispatch(getPageTitle(`Search: ${query}`));
+        return res.data.data;
+      })
+      .catch((error) => dispatch(getDataFailure(error)));
   };
 }

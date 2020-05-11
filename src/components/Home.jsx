@@ -12,7 +12,7 @@ export default function Home() {
           A responsive web-based music streaming app built with React, Redux and
           Deezer API
         </div>
-        <button className="button-home">
+        <button className="custom-button">
           <Link to="/player/albums">Go to Player</Link>
         </button>
         <div>

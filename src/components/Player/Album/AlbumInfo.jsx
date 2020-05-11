@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Loader from "../Loader";
+import Loader from "./../Loader/Loader";
 import AlbumDetail from "./AlbumDetail";
 import { getPageTitle } from "./../../../redux/data/data.actions";
 import { getAlbumTracks } from "./../../../redux/dataFetch";
+import ErrorBoundary from "./../ErrorBoundary/ErrorBoundary";
 
 class AlbumInfo extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class AlbumInfo extends Component {
     const { error, loading, album } = this.props;
 
     if (error) {
-      return <div>Error! {error.message}</div>;
+      return <ErrorBoundary message={error.message} />;
     }
     if (loading) {
       return <Loader />;

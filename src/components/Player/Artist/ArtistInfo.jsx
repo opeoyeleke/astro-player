@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Loader from "../Loader";
+import Loader from "./../Loader/Loader";
 import ArtistDetail from "./ArtistDetail";
 import { getPageTitle } from "./../../../redux/data/data.actions";
 import { getArtistTracks } from "./../../../redux/dataFetch";
+import ErrorBoundary from "./../ErrorBoundary/ErrorBoundary";
 
 class ArtistInfo extends Component {
   componentDidMount() {
@@ -22,7 +23,7 @@ class ArtistInfo extends Component {
     const { error, loading, artist } = this.props;
 
     if (error) {
-      return <div>Error! {error.message}</div>;
+      return <ErrorBoundary message={error.message} />;
     }
     if (loading) {
       return <Loader />;

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Loader from "../Loader";
+import Loader from "./../Loader/Loader";
 import PlaylistDetail from "./PlaylistDetail";
 import { getPageTitle } from "./../../../redux/data/data.actions";
 import { getPlaylistTracks } from "./../../../redux/dataFetch";
+import ErrorBoundary from "./../ErrorBoundary/ErrorBoundary";
 
 class PlaylistInfo extends Component {
   componentDidMount() {
@@ -22,7 +23,7 @@ class PlaylistInfo extends Component {
     const { error, loading, playlist } = this.props;
 
     if (error) {
-      return <div>Error! {error.message}</div>;
+      return <ErrorBoundary message={error.message} />;
     }
     if (loading) {
       return <Loader />;

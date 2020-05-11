@@ -10,6 +10,7 @@ import {
   ic_album,
   ic_queue_music,
   ic_arrow_back,
+  ic_search,
 } from "react-icons-kit/md";
 
 class NavBar extends Component {
@@ -42,6 +43,12 @@ class NavBar extends Component {
             <NavLink to="/player/tracks" activeClassName="active">
               <Icon className="nav-icon" icon={ic_music_note} />
               Tracks
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink to="/player/search" activeClassName="active">
+              <Icon className="nav-icon" icon={ic_search} />
+              Search
             </NavLink>
           </div>
         </div>
@@ -80,6 +87,12 @@ class NavBar extends Component {
               <NavLink to="/player/tracks" activeClassName="active">
                 <Icon className="nav-icon" icon={ic_music_note} />
                 Tracks
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink to="/player/search" activeClassName="active">
+                <Icon className="nav-icon" icon={ic_search} />
+                Search
               </NavLink>
             </div>
             <div className="nav-item">

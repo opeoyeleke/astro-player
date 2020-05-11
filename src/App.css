@@ -120,7 +120,7 @@ body {
   }
 
   .bm-item:nth-child(1),
-  .bm-item:nth-child(5) {
+  .bm-item:nth-child(6) {
     border-bottom: 1px solid #505c6d;
   }
 
@@ -220,6 +220,9 @@ body {
   .title {
     font-size: 85%;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .details-info {
@@ -315,7 +318,7 @@ body {
     color: #666666;
   }
 
-  .button-home {
+  .custom-button {
     color: white;
     background-color: #1a092e;
     border-radius: 4px;
@@ -325,6 +328,67 @@ body {
 
   .home-right img {
     max-width: 80vw;
+  }
+
+  .error-message {
+    text-align: center;
+    color: #666666;
+    padding-top: 20px;
+    font-size: 70%;
+  }
+
+  .error-message img {
+    height: 100px;
+    width: auto;
+  }
+
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .search-term {
+    width: 100%;
+    border: 2px solid #1a092e94;
+    border-right: none;
+    padding: 5px;
+    height: 21px;
+    border-radius: 17px 0 0 17px;
+    outline: none;
+    color: #9dbfaf;
+  }
+
+  .search-term:focus {
+    color: #1a092e;
+  }
+
+  .search-button {
+    width: 40px;
+    height: 35px;
+    border: 1px solid #1a092e;
+    background: #1a092e;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .search-button:active {
+    color: #f87060;
+  }
+
+  .wrap {
+    width: 50%;
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+    left: 25%;
+  }
+
+  .mobile-search {
+    width: 100%;
   }
 }
 
@@ -365,9 +429,11 @@ body {
     grid-column: 1/3;
     position: fixed;
     height: 8vh;
-    background: #b3a394;
+    z-index: 99;
+    background: #1a092e78;
     display: inline-flex;
     justify-content: space-between;
+    border-top: 1px solid #1a092e;
   }
 
   .mobile-menu {
@@ -469,21 +535,22 @@ body {
   .page-title-large {
     position: fixed;
     width: 100%;
-    height: 60px;
+    height: 50px;
     color: #1a092e;
     background-color: white;
     z-index: 7;
     font-size: 30px;
     font-weight: 600;
+    border-bottom: 1px solid #1a092e1f;
   }
 
   .page-title-content {
-    margin: 15px 0 0 70px;
+    margin: 10px 0 0 70px;
   }
 
   .main-container-content,
   .details-container {
-    padding: 70px 10px 10px 10px;
+    padding: 58px 10px 10px 10px;
   }
 
   .main-container-items {
@@ -512,6 +579,9 @@ body {
   .artist,
   .title {
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .details-info {
@@ -600,7 +670,7 @@ body {
 
   .home-left {
     width: 40vw;
-    margin: 15vh 40px;
+    margin: 100px 40px;
   }
 
   .home-left div {
@@ -617,7 +687,7 @@ body {
     color: #666666;
   }
 
-  .button-home {
+  .custom-button {
     color: white;
     background-color: #1a092e;
     border-radius: 4px;
@@ -627,7 +697,7 @@ body {
 
   .home-right {
     width: 50vw;
-    margin: 70px 0px;
+    margin: 50px 0px;
     text-align: end;
   }
 
@@ -635,6 +705,78 @@ body {
     height: auto;
     max-width: 43vw;
     width: auto;
+  }
+
+  .error-message {
+    text-align: center;
+    color: #666666;
+    padding-top: 130px;
+  }
+
+  .error-message img {
+    height: 120px;
+    width: auto;
+  }
+
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .search-term {
+    width: 100%;
+    border: 2px solid #1a092e94;
+    border-right: none;
+    padding: 5px;
+    height: 21px;
+    border-radius: 17px 0 0 17px;
+    outline: none;
+    color: #9dbfaf;
+  }
+
+  .search-term:focus {
+    color: #1a092e;
+  }
+
+  .search-button {
+    width: 40px;
+    height: 35px;
+    border: 1px solid #1a092e;
+    background: #1a092e;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .search-button:active {
+    color: #f87060;
+  }
+
+  .wrap {
+    width: 13%;
+    position: absolute;
+    top: 50%;
+    right: 16%;
+    transform: translate(-50%, -50%);
+  }
+
+  .load-more {
+    text-align: center;
+  }
+
+  .custom-button:hover {
+    cursor: pointer;
+  }
+
+  .custom-button:active {
+    background-color: #1a092ec0;
+  }
+
+  .mobile-search {
+    display: none;
   }
 }
 
@@ -769,7 +911,7 @@ a:visited {
 
 .play-button button {
   color: white;
-  background-color: #f87060;
+  background-color: #1a092e;
   border-radius: 4px;
   padding: 7px 15px;
   border-style: hidden;
@@ -780,7 +922,7 @@ a:visited {
 }
 
 .play-button button:active {
-  background-color: #a14a41;
+  background-color: #1a092ec0;
 }
 
 *:focus {

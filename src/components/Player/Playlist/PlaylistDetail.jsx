@@ -4,8 +4,7 @@ import convert from "convert-seconds";
 import { Icon } from "react-icons-kit";
 import { ic_play_arrow, ic_play_circle_filled } from "react-icons-kit/md";
 import { getTrackInfo } from "../../../redux/dataFetch";
-
-import Loader from "../Loader";
+import Loader from "./../Loader/Loader";
 
 function PlaylistDetail({ playlist, getTrackInfo }) {
   if (!playlist) {

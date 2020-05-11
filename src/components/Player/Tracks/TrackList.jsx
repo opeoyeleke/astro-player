@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Loader from "./../Loader";
+import Loader from "./../Loader/Loader";
 import { connect } from "react-redux";
 import { getTracks } from "./../../../redux/dataFetch";
 import { getPageTitle } from "./../../../redux/data/data.actions";
 import { getTrackInfo } from "../../../redux/dataFetch";
+import ErrorBoundary from "./../ErrorBoundary/ErrorBoundary";
 
 class TrackList extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class TrackList extends Component {
     const { error, loading, tracks, getTrackInfo } = this.props;
 
     if (error) {
-      return <div>Error! {error.message}</div>;
+      return <ErrorBoundary message={error.message} />;
     }
     if (loading) {
       return <Loader />;

@@ -4,10 +4,11 @@ import Albums from "./Album/Albums";
 import TrackList from "./Tracks/TrackList";
 import Playlists from "./Playlist/Playlists";
 import Artists from "./Artist/Artists";
-import Header from "./Header";
+import Header from "./Header/Header";
 import AlbumInfo from "./Album/AlbumInfo";
 import ArtistInfo from "./Artist/ArtistInfo";
 import PlaylistInfo from "./Playlist/PlaylistInfo";
+import Search from "./Search/Search";
 
 export default class MainSection extends Component {
   render() {
@@ -30,6 +31,7 @@ export default class MainSection extends Component {
           <Route exact path="/player/tracks" component={TrackList} />
           <Route exact path="/player/playlists" component={Playlists} />
           <Route exact path="/player/artists" component={Artists} />
+          <Route exact path="/player/search" component={Search} />
         </Switch>
       </div>
     );

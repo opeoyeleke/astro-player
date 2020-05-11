@@ -4,8 +4,7 @@ import convert from "convert-seconds";
 import { Icon } from "react-icons-kit";
 import { ic_play_arrow, ic_play_circle_filled } from "react-icons-kit/md";
 import { getTrackInfo } from "../../../redux/dataFetch";
-
-import Loader from "../Loader";
+import Loader from "./../Loader/Loader";
 
 function AlbumDetail({ album, getTrackInfo }) {
   if (!album) {
@@ -26,7 +25,12 @@ function AlbumDetail({ album, getTrackInfo }) {
             Artist: {album.artist && album.artist.name}
           </div>
           <div className="details-title">Title: {album.title}</div>
-          <div>Genre: {album.genres && album.genres.data[0].name}</div>
+          <div>
+            Genre:{" "}
+            {album.genres && album.genres.data.length > 0
+              ? album.genres && album.genres.data[0].name
+              : "----"}
+          </div>
           <div>Tracks: {album.nb_tracks}</div>
           <div>Released: {album.release_date}</div>
           <div>
