@@ -494,7 +494,7 @@ body {
 
   .track-name {
     margin-top: 4px;
-    opacity: 70%;
+    opacity: 0.7;
   }
   .footer-center,
   .footer-right {
@@ -894,7 +894,7 @@ a:visited {
 }
 
 .artist {
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 .loader-container {
