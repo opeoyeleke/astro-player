@@ -9,7 +9,6 @@ const INITIAL_STATE = {
   artist: null,
   playlist: [],
   error: null,
-  searchResult: null,
 };
 
 const dataReducer = (state = INITIAL_STATE, action) => {
@@ -72,12 +71,6 @@ const dataReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         playlist: action.payload.playlist,
-      };
-    case "GET_SEARCH_SUCCESS":
-      return {
-        ...state,
-        loading: false,
-        searchResult: action.payload.result,
       };
     default:
       return state;

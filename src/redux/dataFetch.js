@@ -10,8 +10,12 @@ import {
   getAlbumTracksSuccess,
   getArtistTracksSuccess,
   getPlaylistTracksSuccess,
-  getSearchSuccess,
 } from "./data/data.actions";
+import {
+  getSearchBegin,
+  getSearchFailure,
+  getSearchSuccess,
+} from "./search/search.actions";
 
 import { setActiveTrack } from "./track/track.actions";
 
@@ -139,7 +143,7 @@ export function getTrackInfo(trackId) {
 
 export function getSearchResult(query) {
   return (dispatch) => {
-    dispatch(getDataBegin());
+    dispatch(getSearchBegin());
     return axios
       .get(
         `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${query}`
@@ -149,6 +153,6 @@ export function getSearchResult(query) {
         dispatch(getPageTitle(`Search: ${query}`));
         return res.data.data;
       })
-      .catch((error) => dispatch(getDataFailure(error)));
+      .catch((error) => dispatch(getSearchFailure(error)));
   };
 }

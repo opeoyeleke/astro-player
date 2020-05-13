@@ -46,8 +46,3 @@ export const getPlaylistTracksSuccess = (playlist) => ({
   type: "GET_PLAYLIST_TRACKS_SUCCESS",
   payload: { playlist },
 });
-
-export const getSearchSuccess = (result) => ({
-  type: "GET_SEARCH_SUCCESS",
-  payload: { result },
-});

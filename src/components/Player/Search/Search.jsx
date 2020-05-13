@@ -110,9 +110,9 @@ function SearchItem({
 }
 
 const mapStateToProps = (state) => ({
-  result: state.data.searchResult,
-  loading: state.data.loading,
-  error: state.data.error,
+  result: state.search.searchResult,
+  loading: state.search.loading,
+  error: state.search.error,
 });
 
 const mapDispatchToProps = (dispatch) => ({
