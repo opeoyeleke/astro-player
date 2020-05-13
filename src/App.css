@@ -119,11 +119,6 @@ body {
     transition: color 0.2s;
   }
 
-  .bm-item:nth-child(1),
-  .bm-item:nth-child(6) {
-    border-bottom: 1px solid #505c6d;
-  }
-
   /* Change color on hover */
   .bm-item:hover {
     color: white;
