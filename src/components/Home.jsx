@@ -12,9 +12,11 @@ export default function Home() {
           A responsive web-based music streaming app built with React, Redux and
           Deezer API
         </div>
-        <button className="custom-button">
-          <Link to="/player/albums">Go to Player</Link>
-        </button>
+
+        <Link to="/player/albums">
+          <button className="custom-button">Go to Player</button>
+        </Link>
+
         <div>
           <a href="https://github.com/opeoyeleke/astro-player">
             <img src={github} alt="github logo" />

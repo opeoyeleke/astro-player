@@ -218,7 +218,6 @@ body {
   }
   .artist,
   .title {
-    font-size: 85%;
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
@@ -350,11 +349,11 @@ body {
 
   .search-term {
     width: 100%;
-    border: 2px solid #1a092e;
+    border: 2px solid #1a092ee0;
     border-right: none;
     padding: 5px;
     height: 21px;
-    border-radius: 17px 0 0 17px;
+    border-radius: 4px 0 0 4px;
     outline: none;
     color: #9dbfaf;
   }
@@ -367,10 +366,10 @@ body {
     width: 40px;
     height: 35px;
     border: 1px solid #1a092e;
-    background: #1a092e;
+    background: #1a092ee0;
     text-align: center;
     color: #fff;
-    border-radius: 0 50% 50% 0;
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
     font-size: 20px;
   }
@@ -514,12 +513,9 @@ body {
   }
 
   .progress-bar {
-    transform: translateY(5px);
     margin-left: 25px;
-  }
-
-  .progress-bar progress {
-    width: 40vw;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .progress {
@@ -531,18 +527,18 @@ body {
     font-family: sans-serif;
   }
   .progress progress[value] {
-    height: 3px;
+    height: 4px;
     width: 100%;
     margin: 0 1em;
-    background: black;
+    background: #1a092e00;
   }
   .progress progress[value]::-webkit-progress-bar {
     background: gray;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0 2px 5px #1a092e78 inset;
   }
   .progress progress[value]::-webkit-progress-value {
-    background-color: gray;
+    background-color: #1a092e;
     border-radius: 5px;
   }
 
@@ -740,11 +736,11 @@ body {
 
   .search-term {
     width: 100%;
-    border: 2px solid #1a092e94;
+    border: 2px solid #1a092ee0;
     border-right: none;
     padding: 5px;
     height: 21px;
-    border-radius: 17px 0 0 17px;
+    border-radius: 4px 0 0 4px;
     outline: none;
     color: #9dbfaf;
   }
@@ -756,11 +752,11 @@ body {
   .search-button {
     width: 40px;
     height: 35px;
-    border: 1px solid #1a092e;
-    background: #1a092e;
+    border: 1px solid #1a092ee0;
+    background: #1a092ee5;
     text-align: center;
     color: #fff;
-    border-radius: 0 50% 50% 0;
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
     font-size: 20px;
   }

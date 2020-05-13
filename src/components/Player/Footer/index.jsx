@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import convert from "convert-seconds";
 
 import TrackInfo from "./TrackInfo";
 import Controls from "./Controls";
@@ -66,9 +65,8 @@ class Footer extends Component {
 
   render() {
     const { activeTrack } = this.props;
-    const currentTime =
-      this.state.currentTime && convert(this.state.currentTime);
-    const duration = this.state.duration && convert(this.state.duration);
+
+    const { currentTime, duration } = this.state;
 
     return (
       <div className="footer-container">

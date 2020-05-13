@@ -93,13 +93,9 @@ function SearchItem({
   return (
     <div className="main-container-item-container">
       <div className="image-container">
-        <img
-          src={image}
-          alt="album cover"
-          onClick={() => {
-            getTrackInfo(id);
-          }}
-        />
+        <Link to={`/player/albums/${albumId}`}>
+          <img src={image} alt="album cover" />
+        </Link>
       </div>
       <div className="info">
         <div className="title">
