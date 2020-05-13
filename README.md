@@ -1,6 +1,6 @@
 # Astro Player
 
-A Web application built using react, redux & Deezer API.
+A Web application built using React, Redux & Deezer API.
 
 <p align="center">
   <img width="700" src="https://raw.githubusercontent.com/opeoyeleke/astro-player/master/screenshots/Screenshot1.jpg" alt="Homepage"/>
