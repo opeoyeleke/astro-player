@@ -48,7 +48,7 @@ class Search extends Component {
               <input
                 type="text"
                 className="search-term"
-                placeholder="Arrists, tracks..."
+                placeholder="Artists, tracks..."
                 value={this.state.value}
                 onChange={this.handleChange}
               />
@@ -81,15 +81,7 @@ class Search extends Component {
   }
 }
 
-function SearchItem({
-  id,
-  image,
-  title,
-  artist,
-  getTrackInfo,
-  albumId,
-  artistId,
-}) {
+function SearchItem({ image, title, artist, getTrackInfo, albumId, artistId }) {
   return (
     <div className="main-container-item-container">
       <div className="image-container">

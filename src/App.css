@@ -82,7 +82,18 @@ body {
   }
 
   .artist-name {
+    max-width: 80px;
     margin-right: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .track-name {
+    max-width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .artist-name::after {
@@ -432,7 +443,6 @@ body {
     background: #1a092e78;
     display: inline-flex;
     justify-content: space-between;
-    border-top: 1px solid #1a092e;
   }
 
   .mobile-menu {
@@ -487,9 +497,20 @@ body {
     margin-left: 20px;
   }
 
+  .artist-name {
+    max-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   .track-name {
     margin-top: 4px;
     opacity: 0.7;
+    max-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .footer-center,
   .footer-right {

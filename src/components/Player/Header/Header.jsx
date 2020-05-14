@@ -39,7 +39,7 @@ class PageTitle extends Component {
             <input
               type="text"
               className="search-term"
-              placeholder="Arrists, tracks..."
+              placeholder="Artists, tracks..."
               value={this.state.value}
               onChange={this.handleChange}
             />
