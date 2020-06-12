@@ -1,9 +1,6 @@
 const INITIAL_STATE = {
   activeTrack: null,
   playingQueue: [],
-  trackImage: null,
-  trackName: "Christmas",
-  trackArtist: "Ne-yo",
 };
 
 const trackReducer = (state = INITIAL_STATE, action) => {
@@ -12,6 +9,11 @@ const trackReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         activeTrack: action.payload.track,
+      };
+    case "SET_PLAYING_QUEUE":
+      return {
+        ...state,
+        playingQueue: action.payload.tracks,
       };
     default:
       return state;

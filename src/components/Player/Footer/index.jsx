@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import TrackInfo from "./TrackInfo";
 import Controls from "./Controls";
 import VolumeRepeat from "./VolumeRepeat";
@@ -95,6 +94,7 @@ class Footer extends Component {
 
 const mapStateToProps = (state) => ({
   activeTrack: state.track.activeTrack,
+  playingQueue: state.track.playingQueue,
 });
 
 export default connect(mapStateToProps)(Footer);

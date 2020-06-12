@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getTracks } from "./../../../redux/dataFetch";
 import { getPageTitle } from "./../../../redux/data/data.actions";
 import { getTrackInfo } from "../../../redux/dataFetch";
+import { setPlayingQueue } from "./../../../redux/track/track.actions";
 import ErrorBoundary from "./../ErrorBoundary/ErrorBoundary";
 
 class TrackList extends Component {
@@ -15,7 +16,7 @@ class TrackList extends Component {
   }
 
   render() {
-    const { error, loading, tracks, getTrackInfo } = this.props;
+    const { error, loading, tracks, getTrackQueue } = this.props;
 
     if (error) {
       return <ErrorBoundary message={error.message} />;
@@ -34,7 +35,8 @@ class TrackList extends Component {
                 image={track.album.cover_medium}
                 title={track.title}
                 artist={track.artist.name}
-                getTrackInfo={getTrackInfo}
+                getTrackQueue={getTrackQueue}
+                playQueue={tracks}
               />
             ))}
         </div>
@@ -43,7 +45,7 @@ class TrackList extends Component {
   }
 }
 
-function TrackItem({ getTrackInfo, id, image, title, artist }) {
+function TrackItem({ id, image, title, artist, getTrackQueue, playQueue }) {
   return (
     <div className="main-container-item-container">
       <div className="image-container">
@@ -51,7 +53,7 @@ function TrackItem({ getTrackInfo, id, image, title, artist }) {
           src={image}
           alt="album cover"
           onClick={() => {
-            getTrackInfo(id);
+            getTrackQueue(id, playQueue);
           }}
         />
       </div>
@@ -70,7 +72,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getTrackInfo: (id) => dispatch(getTrackInfo(id)),
+  getTrackQueue: (id, playQueue) => {
+    dispatch(getTrackInfo(id));
+    dispatch(setPlayingQueue(playQueue));
+  },
   getPageTitle: (title) => dispatch(getPageTitle(title)),
   getTracks: () => dispatch(getTracks()),
 });

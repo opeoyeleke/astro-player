@@ -4,9 +4,10 @@ import convert from "convert-seconds";
 import { Icon } from "react-icons-kit";
 import { ic_play_arrow, ic_play_circle_filled } from "react-icons-kit/md";
 import { getTrackInfo } from "../../../redux/dataFetch";
+import { setPlayingQueue } from "./../../../redux/track/track.actions";
 import Loader from "./../Loader/Loader";
 
-function ArtistDetail({ artist, getTrackInfo }) {
+function ArtistDetail({ artist, getTrackQueue }) {
   if (!artist) {
     return <Loader />;
   }
@@ -29,9 +30,13 @@ function ArtistDetail({ artist, getTrackInfo }) {
             {artist[0].contributors && artist[0].contributors[0].name}
           </div>
           <div className="details-title"> "Top Tracks"</div>
-          <div>Tracks: 50</div>
+          <div>Tracks: {artist.length}</div>
           <div className="play-button">
-            <button>
+            <button
+              onClick={() => {
+                getTrackQueue(artist[0].id, artist);
+              }}
+            >
               <Icon size={20} icon={ic_play_arrow} />
               Play
             </button>
@@ -50,7 +55,8 @@ function ArtistDetail({ artist, getTrackInfo }) {
             duration={track.duration}
             artist={track.artist.name}
             trackSrc={track.preview}
-            getTrackInfo={getTrackInfo}
+            getTrackQueue={getTrackQueue}
+            playQueue={artist}
           />
         ))}
       </div>
@@ -58,7 +64,15 @@ function ArtistDetail({ artist, getTrackInfo }) {
   );
 }
 
-function TrackItem({ id, number, title, duration, artist, getTrackInfo }) {
+function TrackItem({
+  id,
+  number,
+  title,
+  duration,
+  artist,
+  getTrackQueue,
+  playQueue,
+}) {
   const trackDuration = convert(duration);
   return (
     <div className="track-item-container">
@@ -82,7 +96,7 @@ function TrackItem({ id, number, title, duration, artist, getTrackInfo }) {
                 size={20}
                 icon={ic_play_circle_filled}
                 onClick={() => {
-                  getTrackInfo(id);
+                  getTrackQueue(id, playQueue);
                 }}
               />
             </td>
@@ -94,7 +108,10 @@ function TrackItem({ id, number, title, duration, artist, getTrackInfo }) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getTrackInfo: (id) => dispatch(getTrackInfo(id)),
+  getTrackQueue: (id, playQueue) => {
+    dispatch(getTrackInfo(id));
+    dispatch(setPlayingQueue(playQueue));
+  },
 });
 
 export default connect(null, mapDispatchToProps)(ArtistDetail);
