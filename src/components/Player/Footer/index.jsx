@@ -34,6 +34,7 @@ class Footer extends Component {
       const track = this.props.activeTrack.preview;
       if (track) {
         this.player.src = track;
+        this.player.load();
         this.player.play();
         this.setState({
           isPlaying: true,
@@ -62,10 +63,18 @@ class Footer extends Component {
     this.setState({ muteSound: !this.state.muteSound });
   };
 
+  handleNextTrack = () => {};
+
   render() {
     const { activeTrack } = this.props;
-
     const { currentTime, duration } = this.state;
+
+    const getTrackIndex = (currentTrack, queue) => {
+      const trackIndex = queue.findIndex(
+        (track) => track.id === currentTrack.id
+      );
+      return trackIndex;
+    };
 
     return (
       <div className="footer-container">
