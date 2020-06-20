@@ -10,7 +10,13 @@ import {
 import Progress from "./Progress";
 
 function Controls(props) {
-  const { isPlaying, changeIsPlaying, duration, currentTime } = props;
+  const {
+    isPlaying,
+    changeIsPlaying,
+    handleNextTrack,
+    duration,
+    currentTime,
+  } = props;
 
   return (
     <div className="footer-center">
@@ -19,7 +25,9 @@ function Controls(props) {
           className="control-button"
           size={30}
           icon={ic_skip_previous}
-          onClick={() => {}}
+          onClick={() => {
+            handleNextTrack("previous");
+          }}
         />
         {isPlaying ? (
           <Icon
@@ -44,7 +52,9 @@ function Controls(props) {
           className="control-button"
           size={30}
           icon={ic_skip_next}
-          onClick={() => {}}
+          onClick={() => {
+            handleNextTrack("next");
+          }}
         />
       </div>
       <div className="progress-bar">

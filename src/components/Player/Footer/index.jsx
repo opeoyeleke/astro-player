@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import TrackInfo from "./TrackInfo";
 import Controls from "./Controls";
 import VolumeRepeat from "./VolumeRepeat";
+import { getTrackInfo } from "../../../redux/dataFetch";
 
 class Footer extends Component {
   constructor() {
@@ -63,18 +64,30 @@ class Footer extends Component {
     this.setState({ muteSound: !this.state.muteSound });
   };
 
-  handleNextTrack = () => {};
+  handleNextTrack = (direction) => {
+    const { getTrackInfo } = this.props;
+    const { activeTrack, playingQueue } = this.props;
+    const trackIndex = playingQueue.findIndex(
+      (track) => track.id === activeTrack.id
+    );
+    if (direction === "previous") {
+      if (trackIndex === 0) {
+        return null;
+      } else {
+        getTrackInfo(playingQueue[trackIndex - 1].id);
+      }
+    } else if (direction === "next") {
+      if (trackIndex === playingQueue.length - 1) {
+        return null;
+      } else {
+        getTrackInfo(playingQueue[trackIndex + 1].id);
+      }
+    }
+  };
 
   render() {
     const { activeTrack } = this.props;
     const { currentTime, duration } = this.state;
-
-    const getTrackIndex = (currentTrack, queue) => {
-      const trackIndex = queue.findIndex(
-        (track) => track.id === currentTrack.id
-      );
-      return trackIndex;
-    };
 
     return (
       <div className="footer-container">
@@ -86,6 +99,7 @@ class Footer extends Component {
         <Controls
           isPlaying={this.state.isPlaying}
           changeIsPlaying={this.changeIsPlaying}
+          handleNextTrack={this.handleNextTrack}
           currentTime={currentTime}
           duration={duration}
         />
@@ -106,4 +120,8 @@ const mapStateToProps = (state) => ({
   playingQueue: state.track.playingQueue,
 });
 
-export default connect(mapStateToProps)(Footer);
+const mapDispatchToProps = (dispatch) => ({
+  getTrackInfo: (id) => dispatch(getTrackInfo(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);
