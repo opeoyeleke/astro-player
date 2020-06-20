@@ -44,6 +44,18 @@ class Footer extends Component {
         });
       }
     }
+    if (this.state.currentTime === this.state.duration) {
+      const { getTrackInfo } = this.props;
+      const { activeTrack, playingQueue } = this.props;
+      const trackIndex = playingQueue.findIndex(
+        (track) => track.id === activeTrack.id
+      );
+      if (trackIndex === playingQueue.length - 1) {
+        return this.player.ended;
+      } else {
+        getTrackInfo(playingQueue[trackIndex + 1].id);
+      }
+    }
   }
 
   changeIsPlaying = () => {
