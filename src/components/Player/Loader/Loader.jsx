@@ -10,8 +10,8 @@ export default class App extends React.Component {
         <Loader
           type="Circles"
           color="#1a092e"
-          height={50}
-          width={50}
+          height={35}
+          width={35}
           timeout={30000000}
         />
       </div>
