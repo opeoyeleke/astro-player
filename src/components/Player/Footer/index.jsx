@@ -48,7 +48,7 @@ class Footer extends Component {
       const { getTrackInfo } = this.props;
       const { activeTrack, playingQueue } = this.props;
       const trackIndex = playingQueue.findIndex(
-        (track) => track.id === activeTrack.id
+        (track) => track?.id === activeTrack?.id
       );
       if (trackIndex === playingQueue.length - 1) {
         return this.player.ended;
