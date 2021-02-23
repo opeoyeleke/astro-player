@@ -1,9 +1,0 @@
-[build]
-  command = "react-scripts build"
-  functions = "functions/"
-  publish = "dist"
-
-  [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
