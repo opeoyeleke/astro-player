@@ -24,7 +24,7 @@ export function getAlbums() {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/chart/top?limit=50`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/chart/top?limit=50`
       )
       .then((res) => {
         dispatch(getAlbumsSuccess(res.data.albums.data));
@@ -39,7 +39,7 @@ export function getPlaylists() {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/chart/top?limit=50`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/chart/top?limit=50`
       )
       .then((res) => {
         dispatch(getPlaylistsSuccess(res.data.playlists.data));
@@ -54,7 +54,7 @@ export function getArtists() {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/chart/top?limit=50`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/chart/top?limit=50`
       )
       .then((res) => {
         dispatch(getArtistsSuccess(res.data.artists.data));
@@ -69,7 +69,7 @@ export function getTracks() {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/chart/top?limit=50`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/chart/top?limit=50`
       )
       .then((res) => {
         dispatch(getTracksSuccess(res.data.tracks.data));
@@ -84,7 +84,7 @@ export function getAlbumTracks(albumId) {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/album/${albumId}`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/album/${albumId}`
       )
       .then((res) => {
         dispatch(getAlbumTracksSuccess(res.data));
@@ -100,7 +100,7 @@ export function getArtistTracks(artistId) {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/artist/${artistId}/top?limit=50`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/artist/${artistId}/top?limit=50`
       )
       .then((res) => {
         dispatch(getArtistTracksSuccess(res.data.data));
@@ -116,7 +116,7 @@ export function getPlaylistTracks(playlistId) {
     dispatch(getDataBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/playlist/${playlistId}`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/playlist/${playlistId}`
       )
       .then((res) => {
         dispatch(getPlaylistTracksSuccess(res.data));
@@ -131,7 +131,7 @@ export function getTrackInfo(trackId) {
   return (dispatch) => {
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/track/${trackId}`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/track/${trackId}`
       )
       .then((res) => {
         dispatch(setActiveTrack(res.data));
@@ -146,7 +146,7 @@ export function getSearchResult(query) {
     dispatch(getSearchBegin());
     return axios
       .get(
-        `https://astro-cors-server.gadgetvalley.tech/fetch/https://api.deezer.com/search?q=${query}`
+        `https://astro-cors-server.herokuapp.com/fetch/https://api.deezer.com/search?q=${query}`
       )
       .then((res) => {
         dispatch(getSearchSuccess(res.data.data));
